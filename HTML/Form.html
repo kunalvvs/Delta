@@ -8,7 +8,7 @@
 <body>
     <form action="/server">
      <div>
-        <label for="username">Username:</label>    <!--Classical approach-->
+        <label for="username">Username:</label>    <!--Classical approach using div and label-->
         <input type="text" size="50" placeholder="Enter name" id="username" name="username">
     
      </div>
@@ -35,7 +35,7 @@
     </div>
 <br>
     </form>
-    Search on google 🔍
+    Search on google 🔍                                     <!--Button-->
     <form action="https://www.google.com/search">
      <input type="text" placeholder="search on google" name="q">
         <button>Search </button>
@@ -43,19 +43,28 @@
 
     </form>
      <br>
-    <form action="checkbox">
+    <form action="checkbox">                       <!--Checkbox-->
       <input type="checkbox" name="age" id="age">
       <label for="age">Age: </label>
 
 
       <br>
-      <input type="radio" >
+      <input type="radio" >                         <!--Radio-->
       <label for="Radio" > Submit</label>
 
-      <select name="Profession" id="profession">
-         <option selected>Student</option>
+      <select name="Profession" id="profession">     <!--Dropdown-->
+         <option>Select your option</option>
+         <option >Student</option>
          <option>Developer</option>
       </select>
+      <br>
+      <label for="vol">Select range </label>            <!--Range-->
+      <input type="range" name="vol" id="vol" min="10" max="100" step="10" value="20">
+
+      <br>
+      <label for="feed">Write content</label>         <!--TextArea-->
+      <textarea name="feed" id="feed"> </textarea>
+      <button>Submit</button>
      </form>
 </body>
 </html>
