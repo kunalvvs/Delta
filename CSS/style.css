@@ -1,11 +1,23 @@
 h2{
-    color: orange;
+    color: orange;         /*Color property*/
+    text-align: center;         /*text property*/
+    font-weight: 100;               /*font  property*/
+    text-decoration: black underline;
+    font-size: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    
 }
 button{
     background-color: rgb(128, 128, 147);
     color: white;
+    text-decoration: line-through;
+    font-size: 50px;
 }
 p{
-    background-color: #000;
-    color: white;
+    background-color: #fff;
+    color: black;
+    text-align:justify;
+    text-decoration:dotted black underline;
+    font-size: 40px;
+    font-family: sans-serif;
 }
