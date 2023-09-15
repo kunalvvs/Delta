@@ -1,0 +1,61 @@
+*{
+    /* color: aliceblue; */
+    /* background-color: black;
+     */
+     font-size: 30px;
+}
+/* Element sel. */
+p{
+    font-family: 'Courier New', Courier, monospace;
+}
+/* Id sel. */
+#p1{        
+    color: rgb(77, 42, 165);
+}
+#p2{
+    text-align: center;
+    column-fill: auto;
+    color: red;
+}
+
+/* class sel. */
+.div1{
+    background-color: rgb(236, 133, 7);
+   
+}
+div p{                              /*Descendent sel.*/
+    font-style: italic;
+    text-shadow: 0rex;
+    text-decoration: dashed underline;
+}
+main{
+    text-transform: capitalize;
+    text-shadow: darkred;
+    background-color: gainsboro;
+    animation-play-state: running;
+}
+#p2 a{                            /*Descendent sel.*/
+    color:blue;
+
+}
+
+/* Adjency sibling Combinator  */
+
+ul+p{
+    color: blueviolet;
+}
+/* Child combinator */
+div>input{
+    
+    background-color: blue;
+}
+
+div[class]
+{
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    text-align: right;
+}
+a{
+    text-decoration: none;
+
+}
