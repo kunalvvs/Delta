@@ -25,10 +25,13 @@ h1{
     right: 0%;
     top: 0px;
     color: chartreuse;
-    align-items: flex-start;
-    display: flex;
+ 
 }
 
 div{
     display: flex;
+}
+
+span{
+    background-color: aqua;
 }
