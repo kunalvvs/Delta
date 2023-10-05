@@ -23,6 +23,7 @@ p{
     background-color: rgb(236, 133, 7);
    
 }
+
 div p{                              /*Descendent sel.*/
     font-style: italic;
     text-shadow: 0rex;
@@ -31,11 +32,12 @@ div p{                              /*Descendent sel.*/
 main{
     text-transform: capitalize;
     text-shadow: darkred;
-    background-color: gainsboro;
-    animation-play-state: running;
+    /* background-color: gainsboro; */
+    /* animation-play-state: running; */
 }
 #p2 a{                            /*Descendent sel.*/
-    color:blue;
+    color:rgb(0, 255, 60);
+    text-decoration: none;
 
 }
 
@@ -49,13 +51,40 @@ div>input{
     
     background-color: blue;
 }
-
+/* Attribute Selector */
 div[class]
 {
     /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
     text-align: right;
 }
+
 a{
     text-decoration: none;
+    text-decoration: navy;
+}
+/* Pseduo class */
+main:hover{
+    
+    background-color: blue;
+   color: crimson;
+}
+main:active{
+    color: chartreuse;
+}
 
+#p3:hover{
+    color: aqua;
+}
+
+/* pseudo element */
+main::first-letter{
+  font-size: 300%;
+  color: azure;
+
+}
+#ul::selection{
+   background-color: brown;
+}
+p::selection{
+    background-color: brown;
 }

@@ -1,0 +1,34 @@
+
+Div{
+    width: 80px;
+    height: 200px;
+    border: 2px solid  black;
+    /* margin: 10px; */
+}
+
+#f{
+    border: 2px solid black;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+#s{
+    border: 2px solid black;
+    background-color: yellow;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+   margin: 10px;
+}
+
+#t{
+    border: 2px solid black;
+    background-color: green;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 10px;
+}

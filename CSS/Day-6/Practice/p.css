@@ -1,0 +1,44 @@
+
+/* PART A */
+#mainTopic{
+    color: blue;
+}
+*{
+    text-align: center;
+}
+
+h1,
+h3,h5{
+    font-family: Georgia;
+}
+
+.p{
+    color: white;
+    background-color: cornflowerblue;
+}
+
+div button
+{
+    color: azure;
+    background-color: purple;
+}
+
+/* PART B Pesudo class  */
+
+button:hover{
+    background-color: yellow;
+    color: blue;
+}
+
+p:nth-of-type(2n)
+{
+    color: yellow;
+}
+
+h1::first-letter{
+    color : red;
+}
+
+#yes:checked + label{
+    color: darkgreen;
+}
