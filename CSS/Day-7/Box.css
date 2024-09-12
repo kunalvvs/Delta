@@ -10,6 +10,10 @@ p::selection{
 p::first-letter{
     font-size: 222%;
 }
+p{
+    display: flex;
+    display: inline-block;
+}
 
 
 h1{
@@ -28,10 +32,54 @@ h1{
  
 }
 
-div{
-    display: flex;
-}
+
 
 span{
     background-color: aqua;
+}
+
+
+#f{
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    border: 2px solid black;
+    border-radius: 50%;
+    display:flex;
+    /* justify-content:flex-end; */
+    display: inline-block;
+}
+
+#s{
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    border: 2px solid black;
+    border-radius: 50%;
+    display:flex;
+    /* justify-content:flex-end; */
+    display: inline-block;
+}
+
+#t{
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    border: 2px solid black;
+    border-radius: 50%;
+    display:flex;
+    /* justify-content:flex-end; */
+    display: inline-block;
+}
+
+/* #main{
+    display:flex;
+    /* justify-content:flex-end; 
+    display: inline-block;
+} */
+
+
+
+li{
+    display: inline;
 }
