@@ -1,0 +1,88 @@
+#sd{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(255, 0, 0);
+    transition: width 5s ;
+    transition-delay: 0.5s;
+}
+
+#sd:hover{
+    width: 1500px;
+    background-color: blue;
+    transform: scale(.9);
+}
+
+
+
+#o{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(43, 255, 0);
+    transition: width 5s ;
+    transition-delay: 0.5s;
+}
+
+#o:hover{
+    width: 1500px;
+    background-color: rgb(251, 255, 0);
+}
+
+
+#t{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(255, 242, 0);
+    transition: width 5s ;
+    transition-delay: 1s;
+}
+
+#t:hover{
+    width: 1500px;
+    background-color: rgb(234, 0, 255);
+}
+
+
+
+
+
+#sds{
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    transition: width 5s ;
+    transition-delay: 0.5s;
+}
+
+#sds:hover{
+    width: 1500px;
+    background-color: blue;
+}
+
+
+
+#os{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(255, 0, 255);
+    transition: width 5s ;
+    transition-delay: 0.5s;
+}
+
+#os:hover{
+    width: 1500px;
+    background-color: rgb(12, 14, 11);
+}
+
+
+#ts{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(255, 149, 0);
+    transition: width 5s ;
+    transition-delay: 0.5s;
+}
+
+#ts:hover{
+    width: 1500px;
+    background-color: rgb(155, 29, 166);
+}

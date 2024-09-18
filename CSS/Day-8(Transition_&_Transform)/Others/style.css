@@ -1,0 +1,23 @@
+div{
+    background-color: gold;
+    box-shadow: 10px 10px;
+    width: 100px;
+    height: 400px;
+}
+
+
+p{
+    color: rgb(255, 255, 255);
+    /* text-align: center; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+    height: 50%;
+}
+
+#text1{
+    color: rgb(255, 255, 255);
+    /* text-align: center; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+    height: 50%;
+}
