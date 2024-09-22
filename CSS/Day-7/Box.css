@@ -11,7 +11,7 @@ p::first-letter{
     font-size: 222%;
 }
 p{
-    display: flex;
+    /* display: flex; */
     display: inline-block;
 }
 
@@ -56,7 +56,7 @@ span{
     background-color: pink;
     border: 2px solid black;
     border-radius: 50%;
-    display:flex;
+    /* display:flex; */
     /* justify-content:flex-end; */
     display: inline-block;
 }
@@ -67,7 +67,7 @@ span{
     background-color: pink;
     border: 2px solid black;
     border-radius: 50%;
-    display:flex;
+    /* display:flex; */
     /* justify-content:flex-end; */
     display: inline-block;
 }
