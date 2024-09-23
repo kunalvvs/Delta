@@ -8,6 +8,7 @@
     justify-content:space-evenly;
     flex-wrap: wrap;
     align-items: center;
+
 }
 
 .s{
@@ -33,12 +34,16 @@
     border: 3px solid rgb(46, 188, 173);
     border-radius: 10px;
     display: flex;
-    flex-direction: row;
-    /* flex-wrap: wrap; */
+    /* flex-direction: column; */
+    /* justify-content: flex-start; */
+    /* justify-items: flex-start; */
+    align-items: center;
 }
 
 .child{
     width: 80px;
     height: 50px;
-   
+   margin-left: 5px;
+   line-height: 50px;
+   /* margin-top: 15px; */
 }
