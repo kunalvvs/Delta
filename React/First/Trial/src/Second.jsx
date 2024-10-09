@@ -1,12 +1,13 @@
-let name = "HI Man";
+let name="kunal";
 
 function Second()
   
 {
     return <>
-        <button ><h1 id="ccc">Button</h1></button>
+        <button id="ccc" >Button</button>
         {name}
-          <div>hwllo</div>
+          <div>this is {name}</div>
+
     </>
 }
 
