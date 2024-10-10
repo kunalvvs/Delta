@@ -19,7 +19,7 @@ function App() {
         <Sum a={23} b={43}/>
       </div>
     </>
-  
+
 }
 
 export default App
