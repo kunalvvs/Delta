@@ -23,9 +23,9 @@ function Example()
 function App() {
   let arr = ["if" , "ternary", "switch","logical && operator"];
   let a =arr.map((ele)=><li>{ele}</li>);
-  let st ={ marginLeft: "50px",  fontSize: "20px", textAlign: "left", padding: "5px" ,backgroundColor: "rgb(245, 203, 163)" , border: "2px solid green" , color: "red" , borderRadius: "10px" };
-  let h1 = {color:"rgb(255, 195, 25)", position: "fixed", top: "0%" ,marginLeft: "50px"};
-  let d1 = { width: "400px" , height: "50px", backgroundColor: "grey" ,position:"fixed", top: "45px",};
+  let st ={margin: "30px", marginLeft: "50px",  fontSize: "20px", textAlign: "left", padding: "5px" ,backgroundColor: "rgb(245, 203, 163)" , border: "2px solid green" , color: "red" , borderRadius: "10px" };
+  let h1 = {color:"rgb(255, 195, 25)", marginLeft: "50px" };
+  let d1 = { width: "400px" , height: "50px", backgroundColor: "grey" };
   let h2 = {marginLeft: "10px" ,
     border: "3px solid blue" , 
     padding:"3px" , 
