@@ -4,18 +4,44 @@ import Buttons from './Buttons'
 import Events from './Buttons'
 import Form from './Form'
 
-function App() {
+// function App() {
   
 
-  return (
-    <>
-      <div>
-        {/* <Buttons/> */}
-        <Form/>
-      </div>
+//   return (
+//     <>
+//       <div>
+//         {/* <Buttons/> */}
+//         <Form/>
+//       </div>
      
-    </>
-  )
+//     </>
+//   )
+// }
+
+// export default App
+
+
+import React, { useState } from "react";
+function App() {
+	const [value, setValue] = useState("");
+	function handleChange(e) {
+		setValue(e.target.value);
+	}
+	return (
+		<div
+			style={{ textAlign: "center", margin: "auto" }}
+		>
+			<h1 style={{ color: "Green" }}>
+				Hi All Code is Green
+			</h1>
+			<h3>
+				Exemple for React onChange Event Handler
+			</h3>
+			<input value={value} onChange={handleChange} />
+			<br />
+			<div>User Input:- {value}</div>
+		</div>
+	);
 }
 
-export default App
+export default App;

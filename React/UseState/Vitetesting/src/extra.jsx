@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 
-function extra() {
+function Extra() {
     const [a,b]=useState();
   return (
     <div>extra</div>
   )
 }
 
-export default extra
+export default Extra
