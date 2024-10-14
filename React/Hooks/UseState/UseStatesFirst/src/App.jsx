@@ -1,7 +1,9 @@
 import { useState } from 'react'
-import './App.css'
+import './styles.css'
 import Counter from './Counter'
 import LikeButton from './LikeButton'
+import PasswordGenerator from './PasswordGenerator' //this is cpy pst cde
+
 
 
 
@@ -12,7 +14,9 @@ function App() {
     <>
      <h2 style={{color:"orange"}}>Lets Start The Hooks First Topic is UseState</h2>
      {/* <Counter/> */}
-     <LikeButton/>
+     {/* <LikeButton/> */}
+    <PasswordGenerator/>  
+    
     </>
   )
 }
