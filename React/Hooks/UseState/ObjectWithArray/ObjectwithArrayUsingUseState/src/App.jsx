@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Car from './Car'
 import './App.css'
 import Other from './Other'
+import UserInfo from './UserInfo'
 
 function App() {
   
@@ -9,6 +10,9 @@ function App() {
   return (
     <>
      <Other/>
+     <UserInfo/>
+     <Car/>
+     
     </>
   )
 }

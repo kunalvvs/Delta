@@ -15,7 +15,7 @@ function Other() {
     return (
         <div>
             <ul>
-                {click.map(item => (
+                {click.map( item=> (
                     <li key={item.id}>{item.value}</li>
                 ))}
             </ul>

@@ -12,7 +12,7 @@ export default function Car() {
   
   const updateColor = () => {
     setCar(previousState => {
-      return { ...previousState, color: "blue" }
+      return { ...previousState, color: "blue", year: 2000 }
     });
   }
 
