@@ -75,6 +75,7 @@ const PasswordGenerator = () => {
       <br />
       {password && (
         <>
+          
           <textarea ref={passwordRef} value={password} readOnly />
           <button onClick={copyToClipboard}>Copy to Clipboard</button>
         </>
