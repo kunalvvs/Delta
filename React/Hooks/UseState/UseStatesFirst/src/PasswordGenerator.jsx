@@ -1,7 +1,7 @@
 import React, { useState, useRef, useCallback } from "react";
 
 const PasswordGenerator = () => {
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState(""); //Usestates
   const [length, setLength] = useState(12);
   const [includeNumbers, setIncludeNumbers] = useState(true);
   const [includeCharacters, setIncludeCharacters] = useState(true);
