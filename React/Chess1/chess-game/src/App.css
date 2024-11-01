@@ -1,0 +1,11 @@
+.chessboard {
+  /* Customize the overall chessboard style */
+  border: 1px solid black;
+  width: 400px;
+  height: 400px;
+}
+
+.square-55d63 {
+  /* Customize the style of specific squares */
+  background-color: #f0d9b5;
+}
