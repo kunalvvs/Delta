@@ -21,7 +21,7 @@ const App = () => {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '50px' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center',marginLeft:'500px' }}>
       <h1 style={{ fontFamily: 'Arial, sans-serif', color: '#444' }}>Chess Game</h1>
       <Board board={board} onSquareClick={handleSquareClick} />
     </div>
