@@ -1,15 +1,4 @@
-var figlet = require("figlet");
-
-figlet("Thanks Dinu Bhai", function (err, data) {
-  if (err) {
-    console.log("Something went wrong...");
-    console.dir(err);
-    return;
-  }
-  console.log(data);
-});
-
-// figlet.text(
+.text(
 //     "Party To Banti",
 //     {
 //       font: "Ghost",
