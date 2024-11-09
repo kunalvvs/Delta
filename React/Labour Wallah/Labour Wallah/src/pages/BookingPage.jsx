@@ -12,7 +12,7 @@ export default function BookingPage() {
     paymentMethod: 'cash'
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     toast.success('Booking successful! Worker will be notified.');
   };

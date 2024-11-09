@@ -2,32 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
-interface User {
-  id: string;
-  name: string;
-  email?: string;
-  phone: string;
-  role: 'worker' | 'user';
-  avatar?: string;
-}
-
-interface AuthContextType {
-  user: User | null;
-  loading: boolean;
-  login: (phone: string) => Promise<void>;
-  verifyOtp: (phone: string, otp: string) => Promise<void>;
-  register: (userData: RegisterData) => Promise<void>;
-  logout: () => void;
-}
-
-interface RegisterData {
-  name: string;
-  phone: string;
-  email?: string;
-  role: 'worker' | 'user';
-}
-
-const MOCK_USERS: User[] = [
+const MOCK_USERS = [
   {
     id: '1',
     name: 'John Doe',
@@ -44,10 +19,10 @@ const MOCK_USERS: User[] = [
   }
 ];
 
-const AuthContext = createContext<AuthContextType | null>(null);
+const AuthContext = createContext(null);
 
-export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [user, setUser] = useState<User | null>(null);
+export function AuthProvider({ children }) {
+  const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
@@ -59,9 +34,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setLoading(false);
   }, []);
 
-  const login = async (phone: string): Promise<void> => {
+  const login = async (phone) => {
     try {
-      // Store phone number for OTP verification
       localStorage.setItem('tempPhone', phone);
       toast.success('OTP sent successfully! Use 123456 for testing');
     } catch (error) {
@@ -70,14 +44,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  const verifyOtp = async (phone: string, otp: string): Promise<void> => {
+  const verifyOtp = async (phone, otp) => {
     try {
-      // For demo purposes, accept any phone number with OTP 123456
       if (otp !== '123456') {
         throw new Error('Invalid OTP');
       }
 
-      // Find existing user or create new one
       let currentUser = MOCK_USERS.find(u => u.phone === phone);
       
       if (!currentUser) {
@@ -101,9 +73,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  const register = async (userData: RegisterData): Promise<void> => {
+  const register = async (userData) => {
     try {
-      const newUser: User = {
+      const newUser = {
         id: Math.random().toString(36).substring(2, 9),
         ...userData
       };
@@ -139,3 +111,4 @@ export function useAuth() {
   }
   return context;
 }
+

@@ -1,15 +1,7 @@
 import React from 'react';
 import { Star } from 'lucide-react';
 
-class ServiceCardProps {
-  icon: React.ReactNode;
-  title: string;
-  rating: number;
-  price: string;
-  description: string;
-}
-
-export default function ServiceCard({ icon, title, rating, price, description }: ServiceCardProps) {
+export default function ServiceCard({ icon, title, rating, price, description }) {
   return (
     <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
       <div className="p-6">
@@ -34,3 +26,4 @@ export default function ServiceCard({ icon, title, rating, price, description }:
     </div>
   );
 }
+

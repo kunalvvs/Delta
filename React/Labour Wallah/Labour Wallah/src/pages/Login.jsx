@@ -11,7 +11,7 @@ export default function Login() {
   const [isLoading, setIsLoading] = useState(false);
   const { login, verifyOtp } = useAuth();
 
-  const handleSendOtp = async (e: React.FormEvent) => {
+  const handleSendOtp = async (e) => {
     e.preventDefault();
     if (phone.length !== 10) {
       toast.error('Please enter a valid 10-digit phone number');
@@ -29,7 +29,7 @@ export default function Login() {
     }
   };
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     if (otp.length !== 6) {
       toast.error('Please enter a valid 6-digit OTP');

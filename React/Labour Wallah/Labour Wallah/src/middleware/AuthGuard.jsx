@@ -1,12 +1,7 @@
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
-interface AuthGuardProps {
-  children: React.ReactNode;
-  allowedRoles?: ('worker' | 'user')[];
-}
-
-export default function AuthGuard({ children, allowedRoles }: AuthGuardProps) {
+export default function AuthGuard({ children, allowedRoles }) {
   const { user, loading } = useAuth();
   const location = useLocation();
 
@@ -24,3 +19,4 @@ export default function AuthGuard({ children, allowedRoles }: AuthGuardProps) {
 
   return <>{children}</>;
 }
+
