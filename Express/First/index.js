@@ -5,7 +5,7 @@ const app = express();
 
 let port = 3000;
 
-app.listen(port, ()=> {
+app.listen(port, ()=> {      //listening 
     console.log(`app is listening on port ${port}`)
 });
 
@@ -45,7 +45,7 @@ app.get("/:username/:id" ,(req,res)=>{    //Path parameter
     res.send(htmls);
 });
 
-app.get("/search", (req,res) =>{
+app.get("/search", (req,res) =>{        //Query String
     let {q} = req.query;
     console.log(req.query);
     if(!q)
