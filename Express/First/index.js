@@ -25,12 +25,12 @@ app.get(('/') ,(req,res)=> {
     res.send("Connected with the root path");
 });
 
-
+//Routers (Pages)
 
 // app.get(('/a') ,(req,res)=> {    //routing
 //     res.send("Connected with the a");
 // });
-// app.get(('/b') ,(req,res)=> {
+// app.get(('/b') ,(req,res)=> {    
 //     res.send("Connected with the b");
 // });
 
