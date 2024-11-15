@@ -14,6 +14,11 @@ app.get('/',(req,res) =>{
     res.render("home.ejs");  //render is used to redirect the views/ejsfile.ejs
 })
 
+app.get('/rolldice',(req,res) =>{  //another route
+    let diceval = Math.floor(Math.random()*6)+1;  //2nd method to passing the data
+    res.render("rolldice",{diceval});
+})
+
 
 
 app.listen( port , () => {
