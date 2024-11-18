@@ -8,5 +8,11 @@
 <body>
     <h1>Dice Gave Value : <%= Math.floor(Math.random()*6)+1 %> </h1>
     <h1>2nd Method Dice Gave Value : <%= diceval %> </h1>
+     
+    
+    <% if(diceval==6 ) {%>       <%# Conditional  %>
+        <h1> You Won ! You get again chance</h1>
+        <% } %>
+    
 </body>
 </html>

@@ -9,5 +9,17 @@
     <h3>This page is belongs to <%= username  %></h3>
     <button>Follow</button>
     <button>Message</button>
+    
+    <h3>Accounts that follows You</h3>
+      <% for(let name of followers) { %>  <%# Looping %>
+        <ul>
+            <li> <%= name  %></li>
+        </ul>
+
+        <% } %>
+
+        <p> Followers : <%= {data.followers}  %> &nbsp; &nbsp; &nbsp; 
+         Following : <%= {data.following}  %></p>
 </body>
+
 </html>

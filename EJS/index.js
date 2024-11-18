@@ -10,8 +10,9 @@ const port =  8080;
 app.set("view engine",'ejs');
 app.set("views",path.join(__dirname,"/views"));   //__dirname identify the current directory of the index.js
 
+
 app.get('/',(req,res) =>{
-    res.render("home.ejs");  //render is used to redirect the views/ejsfile.ejs
+    res.render("home.ejs");  //render is used to redirect the views/home.ejs
 })
 
 app.get('/rolldice',(req,res) =>{  //another route
@@ -21,9 +22,12 @@ app.get('/rolldice',(req,res) =>{  //another route
 
 
 app.get("/ig/:username",(req,res)=>{  //here is the another route(page) for creating instagram profile route
+//    const followers = ["Rahul","Dinu","Kelvin","Rabbitd"];
     let {username } = req.params;
-    res.render("instagram",{username});
-
+    let instaData = require("/data.json");
+    let data = instaData[username];
+    res.render("instagram",{data});
+    
 })
 
 
