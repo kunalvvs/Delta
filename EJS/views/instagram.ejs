@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram</title>
-</head>
+<%- include("includes/head.ejs") %>
 <body>
     <h3>This page is belongs to @<%= data.name  %></h3>
     <button>Follow</button>
@@ -19,7 +13,7 @@
        <hr>
 
 
-         <% for(let post in data.posts) {%>
+         <% for(let post of data.posts) {%>
             
             <img src="<%= post.image %>" alt="Post image"/>
             <p> Comments : <%= post.comments  %> &nbsp; &nbsp; &nbsp; 
