@@ -24,9 +24,16 @@ app.get('/rolldice',(req,res) =>{  //another route
 app.get("/ig/:username",(req,res)=>{  //here is the another route(page) for creating instagram profile route
 //    const followers = ["Rahul","Dinu","Kelvin","Rabbitd"];
     let {username } = req.params;
-    let instaData = require("/data.json");
+    let instaData = require("./data.json");
     let data = instaData[username];
-    res.render("instagram",{data});
+    // console.log(data);
+    if(data){
+    res.render("instagram.ejs",{data});
+    }
+    else
+    {
+        res.render("error"); 
+    }
     
 })
 
