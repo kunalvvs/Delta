@@ -1,0 +1,19 @@
+
+h1{
+    color: maroon;
+    background-color: moccasin;
+    height: 40px;
+}
+
+.post{
+    background-color: rgb(232, 243, 172);
+    color: maroon;
+}
+
+.user{
+    font-style: italic;
+}
+
+.link{
+    text-decoration: none;
+}

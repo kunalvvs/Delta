@@ -25,18 +25,18 @@ app.get(('/') ,(req,res)=> {
     res.send("Connected with the root path");
 });
 
-//Routers (Pages)
+//Routers(Pages)
 
-// app.get(('/a') ,(req,res)=> {    //routing
-//     res.send("Connected with the a");
-// });
-// app.get(('/b') ,(req,res)=> {    
-//     res.send("Connected with the b");
-// });
+app.get(('/a') ,(req,res)=> {    //routing
+    res.send("Connected with the a");
+});
+app.get(('/b') ,(req,res)=> {    
+    res.send("Connected with the b");
+});
 
-// app.get(('*') ,(req,res)=> {
-//     res.send("Page not found");
-// });
+app.get(('*') ,(req,res)=> {
+    res.send("Page not found");
+});
 
 
 app.get("/:username/:id" ,(req,res)=>{    //Path parameter
