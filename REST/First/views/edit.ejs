@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Post</title>
+    
 </head>
 <body>
     <p>Edit Post : <%= post.id %> </p>
@@ -11,9 +12,10 @@
        <h3 class="user">@<%= post.username  %></h3>
        <h4 class="content"> </h4>
     </div>
-    <form method="post" action="posts/<%=post.id%>?_method=PATCH">
-        <textarea rows="10" cols="30"><%= post.content %></textarea>
-        <button>Submit</button>
-    </form>
+      <form action="/posts/<%= post.id %>?_method=PATCH" method="POST">
+        <textarea name="content" id="content" rows="4" cols="50"><%= post.content %></textarea>
+       <br> <button type="submit">Save Changes</button>
+    </form> 
+     
 </body>
 </html>

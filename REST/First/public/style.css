@@ -17,3 +17,15 @@ h1{
 .link{
     text-decoration: none;
 }
+
+button{
+    border-radius: 10px;
+    background-color: rgb(37, 160, 160);
+   
+}
+
+button:hover{
+    transition: .5s;
+    transform: scale(1.1);
+    background-color: rgb(255, 255, 255);
+}
