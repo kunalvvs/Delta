@@ -26,7 +26,9 @@ let posts= [
     {id:uuidv4(),username:"kelivin",content:"This is the third post"},
 ];
 
-
+app.get("/",(req,res)=>{
+    res.render("index",{posts})
+});
 
 app.get("/posts",(req,res)=>{
     res.render("index",{posts});  //for render a all post route(index.ejs)
