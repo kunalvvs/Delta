@@ -58,8 +58,6 @@ app.patch("/posts/:id",(req,res)=>{    //edit the post
     post.content = newContent;
     res.redirect("/posts");
     console.log(post);
-    
-    
 });
 
 
@@ -67,8 +65,6 @@ app.get("/posts/:id/edit",(req,res)=>{     //get with edit route
     let {id} = req.params;
     let post = posts.find((p) => id === p.id );
     res.render("edit",{post});
-
-  
 });
 
 
@@ -76,5 +72,4 @@ app.delete("/posts/:id",(req,res)=>{
     let {id} = req.params;
      posts = posts.filter((p) => id !== p.id );
      res.redirect("/posts");
-    
 });
