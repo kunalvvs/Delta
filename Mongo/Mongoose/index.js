@@ -45,11 +45,11 @@ const User = mongoose.model("User",userSchema);  //collection created
 
 console.log("-------------------------");
 
-// User.find({age: {$gt: 20}}).then(res=> {
-//     console.log(res);       //console.log(res[0].name) for particular info in document
-// }).catch(err=>{
-//     console.log(err);
-// });
+User.find({age: {$gt: 20}}).then(res=> {
+    console.log(res);       //console.log(res[0].name) for particular info in document
+}).catch(err=>{
+    console.log(err);
+});
 
 // console.log("---------------FindOne--------------");
 
@@ -75,6 +75,6 @@ console.log("-------------------------");
 // }).catch(err=>{ console.log(err)});   
 
 
-User.findByIdAndDelete("6746b5fbd60d38edeff98dad",{age:42},{new: true}).then(res=>{
-    console.log(res);
-}).catch(err=>{ console.log(err)});   
+// User.findByIdAndDelete("6746b5fbd60d38edeff98dad",{age:42},{new: true}).then(res=>{
+//     console.log(res);
+// }).catch(err=>{ console.log(err)});   
