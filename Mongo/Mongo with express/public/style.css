@@ -1,0 +1,35 @@
+
+.chat{
+    border: 1px solid #25d366;
+    border-radius: 5px ;
+    background-color:#174929;
+    padding-left: 10px;
+    padding: 15px;
+    display: inline-block;
+    color: aliceblue;
+}
+
+.chat1{
+    
+   
+}
+
+.nav{
+    background-color: #25d366;
+    color: white;
+   
+}
+
+.msg{
+    background-color: cadetblue;
+    border: 1px solid cadetblue;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.to{
+    background-color: rgb(71, 164, 57);
+    border: 1px solid cadetblue;
+    border-radius: 5px;
+    padding: 5px;
+}
