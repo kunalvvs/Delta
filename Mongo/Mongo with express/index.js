@@ -44,3 +44,17 @@ app.get("/chats",(req,res)=>{  //index route
         res.render("index.ejs",{data});
         })
 })
+
+
+//new route created for create chat
+
+app.get("/chats/new",(req,res)=>{
+    res.render("new.ejs");
+});
+
+app.post("/chats",(req,res)=>{
+    let chat = new Chat(req.body);
+    chat.save().then(data=>{
+        res.redirect("/chats");
+        })
+})
