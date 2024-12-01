@@ -33,3 +33,9 @@
     border-radius: 5px;
     padding: 5px;
 }
+
+button{
+    background-color: #25d366;
+    border: 2px solid blueviolet;
+    border-radius: 4px;
+}

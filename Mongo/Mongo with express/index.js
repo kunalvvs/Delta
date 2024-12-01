@@ -7,6 +7,7 @@ const Chat = require("./models/chat.js");
 app.set("view engine",'ejs');
 app.set("views",path.join(__dirname,"/views")); 
 app.use(express.static(path.join(__dirname,"public")));  //public folder 
+app.use(express.urlencoded({extended:true}));  //for parse the data from POST
 
 main().then(()=>{
     console.log("Connection successfull")
@@ -53,8 +54,23 @@ app.get("/chats/new",(req,res)=>{
 });
 
 app.post("/chats",(req,res)=>{
-    let chat = new Chat(req.body);
-    chat.save().then(data=>{
+    let {from,to,msg} = req.body;
+    let newChat = new Chat( {
+        from:from,
+        to:to,
+        msg:msg,
+        created_at: new Date()
+    });
+    newChat.save().then(data=>{
         res.redirect("/chats");
         })
 })
+
+//edit route
+
+app.get("/chats/:id/edit",async (req,res)=>{
+    let {id} = req.params;
+    let chat = await Chat.findById(id);
+    res.render("edit.ejs",{chat});
+    });
+    
