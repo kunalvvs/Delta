@@ -73,13 +73,3 @@ app.get("/chats/:id/edit",async (req,res)=>{
     let chat = await Chat.findById(id);
     res.render("edit.ejs",{chat});
     });
-    
-
-
-
-
-
-
-    
-
-    
