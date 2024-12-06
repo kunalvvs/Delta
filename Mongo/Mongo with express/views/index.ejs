@@ -23,8 +23,12 @@
       <p class="msg">Message: <%= chat.msg  %>
         
       </p>
-      <form method="GET" action="chats/<%= chat._id  %>/edit">
+      <form  method="GET" action="chats/<%= chat._id  %>/edit">
         <button> Edit</button>
+      </form>
+<br>
+      <form method="post" action="chats/<%= chat._id  %>?_method=DELETE">
+        <button> Delete</button>
       </form>
      
       <hr>
