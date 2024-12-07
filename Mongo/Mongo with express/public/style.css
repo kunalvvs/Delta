@@ -35,8 +35,8 @@
 }
 
 button{
-    background-color: #25d366;
+    background-color: #d8e8de;
     border: 2px solid blueviolet;
     border-radius: 4px;
+    cursor: pointer;
 }
-
