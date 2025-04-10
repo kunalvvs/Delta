@@ -24,7 +24,7 @@ export default function Counter()
 
 
 
-// import React, { useState } from 'react';
+// import React, { useState } from 'react';a
 
 // function Counter() {
 //   const [count, setCount] = useState(0); // Initial state is 0
