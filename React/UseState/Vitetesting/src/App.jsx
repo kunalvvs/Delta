@@ -16,6 +16,7 @@ var [a,b]=useState(0);  //for data changing and sending and receiving
       className='px-3 py-1 bg-red-500 rounded-md ' >Click (for data changing)</button></div>
   <Pro naam='value' />
    <Extra/>
+   
   </div>
     
   )
