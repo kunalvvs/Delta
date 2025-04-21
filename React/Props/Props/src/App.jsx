@@ -16,6 +16,7 @@ function App() {
         <PropsDemo title="first prop"/>
         <PropsDemo title="sec prop"/>
         <PropsDemo title="third prop"/>
+       
         <Sum a={23} b={43}/>
       </div>
     </>
