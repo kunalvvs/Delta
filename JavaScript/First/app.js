@@ -1,0 +1,1 @@
+console.log(`Additon of ${23+23}`); //template litrals -> `${ }`
