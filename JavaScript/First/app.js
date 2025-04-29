@@ -1,1 +1,3 @@
-console.log(`Additon of ${23+23}`); //template litrals -> `${ }`
+a=12;
+b=65;
+console.log(`Additon of ${a} and ${b} is ${a+b}`); //template litrals -> `${ }`
