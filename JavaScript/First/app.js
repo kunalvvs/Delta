@@ -1,3 +1,5 @@
+
+
 a=12;
 b=65;
 console.log(`Additon of ${a} and ${b} is ${a+b}`); //template litrals -> `${ }`
@@ -22,3 +24,9 @@ console.log(`Welcome ${name}`);
 console.log("Welcome with swag "+name);
 
 alert("Hi "+name);
+
+
+//trim method in string
+
+let str = " Ram Ram  ";
+console.log("Trim Met : "+str.trim());
