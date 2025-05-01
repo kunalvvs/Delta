@@ -26,7 +26,3 @@ console.log("Welcome with swag "+name);
 alert("Hi "+name);
 
 
-//trim method in string
-
-let str = " Ram Ram  ";
-console.log("Trim Met : "+str.trim());
