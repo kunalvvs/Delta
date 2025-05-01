@@ -9,3 +9,10 @@ console.log("Indexoof : "+str.indexOf("m"));
 
 let str2 =" It willl be perform method chaining";
 console.log("Method chaining: "+str2.trim().toUpperCase());
+
+
+console.log("Slice Method: ",str2.slice(3,9));
+
+console.log("Replace l to space : ",str2.replace("l",""));
+
+console.log("Repeat method : ",str.repeat(4));
