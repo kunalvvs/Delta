@@ -42,3 +42,8 @@ console.log("Splice method: ",ar2.splice(0,1,"Supra","Lambo"));
 //sort method - it convert number into string for sorting
 console.log("-----------------------------------");
 console.log("Sorting: ",ar1.sort());
+
+//nested array
+console.log("-----------------------------------");
+let arr4 = [[3,5],[5,6],[7,2]];
+console.log("Nested Array: ",arr4);
