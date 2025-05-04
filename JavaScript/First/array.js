@@ -9,6 +9,11 @@ arr[4] = ["322"];
 
 arr[0]=45;
 
+for(let i=0;i<arr.length-1;i++)
+{
+    console.log("Array",arr[i]);
+}
+
 console.log("-----------------------------------");
 arr.push("Last");
 console.log("After push ",arr); //push,pop,shift,unshift
