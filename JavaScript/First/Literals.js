@@ -19,3 +19,5 @@ const post = {
 }
 
 console.log("My Post ",post);
+console.log("Username",post["username"]);  //get values seperately 
+console.log("likes : ",post.likes);
