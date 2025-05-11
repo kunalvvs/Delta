@@ -16,3 +16,23 @@ function Info(name, age)
 }
 
 Info("John", 25);
+
+
+//return keyword
+function add(a, b)
+{
+    return a + b;
+}
+
+console.log("Addtion value return :",add(5, 10));
+
+function getAdd(n) //sum of natural num
+{
+    let s=0;    //function scope
+
+    for(let i=0;i<=n;i++)
+    {
+        s=s+i;
+    }
+    return s;
+}
