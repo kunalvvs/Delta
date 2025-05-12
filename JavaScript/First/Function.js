@@ -36,3 +36,7 @@ function getAdd(n) //sum of natural num
     }
     return s;
 }
+
+//higher order function
+//lexical scope
+//methods
