@@ -1,3 +1,4 @@
+console.log("Array Started ................");
 
 let arr = [23,42,32,"Hello"];
 console.log("OG array",arr);

@@ -1,3 +1,4 @@
+console.log("Methods Started ................");
 
 
 //trim method in string

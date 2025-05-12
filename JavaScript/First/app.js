@@ -1,3 +1,4 @@
+console.log("Basic Started-alert,prompt ................");
 
 
 a=12;

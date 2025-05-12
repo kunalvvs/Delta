@@ -1,3 +1,5 @@
+console.log("Objects Literal Started ................");
+
 let student = {
     name : "Kunal",
     age : 22,
