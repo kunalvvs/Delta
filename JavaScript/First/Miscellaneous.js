@@ -1,4 +1,14 @@
 
+
+// Arrow function
+// set timeout
+// set setInterval
+// array method: for each,reduce,some,every,map,filter.Arrow
+// Default parameter
+// Spreading
+//Destructuring 
+
+
 console.log("Miscellaneous Started ................");
 
 //Arrow function
@@ -20,7 +30,7 @@ console.log("Add using implicit : ",add(4,5));
 //set timeout function
 console.log("Here is beginning ");
 setTimeout(() => {    //contains callback func 
-    console.log("set timeout");
+    console.log("set timeout"); //it will be print after 4 sec
 }, 4000);
 console.log("Ending");
 
@@ -53,6 +63,46 @@ let newArr = arr.filter((ed)=>{   //filter
 
 console.log("Using filter : ",newArr);
 
-let ev = arr.every((el)=>{  //every method
+let ev = arr.every((el)=>{  //every method used to AND oper unlike some met used to OR oper
     console.log("Every answer is ",el%2==0);
 })
+
+
+
+let red = arr.reduce((res,el)=>{
+return res+el;
+})
+console.log("Using Reduce fun:",red);
+
+
+//default parameter
+
+function sums(a,b=4){
+    return a+b;
+}
+console.log("Default Para ",sums(3));
+
+//Spreading
+
+let arr3 = [23,4,3,7,3,5];
+let maxValue = Math.max(...arr3);
+console.log("Max value Using Spread ",maxValue);
+
+//destructuring array
+
+let des = ["tony","peter","xyz","pyq"];
+let [win,sec,...others] = des;       //rest concept using ...others
+console.log("Winner: ",win,"\nothers: ",others);
+
+//destructuring objects 
+
+let stu = {
+    name:"Kunal",
+    age: 34,
+    marks:67,
+    city:"Agra"
+
+}
+
+let { name,age } = stu;     //object destructuring
+console.log("Name : ",name);

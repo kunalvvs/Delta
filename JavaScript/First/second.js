@@ -1,3 +1,12 @@
+// trim method
+// lowercase upper 
+// index of
+// method chaining
+// Slice met
+// replace 
+// repeat  
+
+
 console.log("Methods Started ................");
 
 
