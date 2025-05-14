@@ -35,4 +35,24 @@ setTimeout(()=>{
     console.log("clear interval");
 },10000);
 
+//array methods 
+let arr = [23,43,22];
+arr.forEach((h)=>{    //for each loop
+  console.log("For each loop",h);
+})
 
+
+let intoo = arr.map((el)=>{
+    return el*2;  //map
+})
+console.log("Using Map",intoo);
+
+let newArr = arr.filter((ed)=>{   //filter 
+    return ed%2==0;
+})
+
+console.log("Using filter : ",newArr);
+
+let ev = arr.every((el)=>{  //every method
+    console.log("Every answer is ",el%2==0);
+})
