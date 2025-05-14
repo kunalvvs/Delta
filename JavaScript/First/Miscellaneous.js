@@ -6,7 +6,7 @@
 // array method: for each,reduce,some,every,map,filter.Arrow
 // Default parameter
 // Spreading
-//Destructuring 
+//Destructuring :array,objects
 
 
 console.log("Miscellaneous Started ................");
