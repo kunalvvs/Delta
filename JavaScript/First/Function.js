@@ -49,5 +49,5 @@ function getAdd(n) //sum of natural num
 let btn = document.querySelector("button");
 btn.addEventListener("click",()=>{
     let h1 = document.querySelector("h1");
-    h1.innerText = entry;
+    h1.innerText = Info;
 })
