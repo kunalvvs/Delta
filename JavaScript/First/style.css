@@ -28,3 +28,9 @@ h1{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bolder;
 }
+
+button{
+     border: 3px solid grey ;
+    border-radius: 10px;
+    background-color: rgb(235, 4, 4);
+}

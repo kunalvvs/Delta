@@ -1,3 +1,5 @@
+
+
 console.log("Function Started ................");
 
 function entry()
@@ -41,3 +43,11 @@ function getAdd(n) //sum of natural num
 //higher order function
 //lexical scope
 //methods
+
+
+//for button 
+let btn = document.querySelector("button");
+btn.addEventListener("click",()=>{
+    let h1 = document.querySelector("h1");
+    h1.innerText = entry;
+})
