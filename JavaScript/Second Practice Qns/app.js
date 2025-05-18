@@ -20,4 +20,4 @@ div.append(h1);
 div.append(p2);
 
 document.querySelector("body").prepend(div);
-div.classList.add("div");
+div.classList.add("box");
