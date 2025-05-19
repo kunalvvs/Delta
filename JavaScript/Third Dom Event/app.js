@@ -67,3 +67,45 @@ console.log("COde = ",event.code);
         console.log("move down");
     }
 })
+
+
+//form events
+
+let form =  document.querySelector("form");
+
+form.addEventListener("submit",function(event){
+    event.preventDefault();
+
+    console.log("form submitted");
+})
+
+//data extraction from form
+
+let form2  = document.querySelector("#form2");
+
+form2.addEventListener("submit",function(event)
+{
+    event.preventDefault();
+    let user = document.querySelector("#user");
+    let pass = document.querySelector("#pass");
+
+    alert(`Hi ${user.value} and your pass is ${pass.value}`);
+
+})
+
+
+//change and input events
+
+let input2 = document.querySelector("#input2");
+
+input2.addEventListener("change",function()
+{
+    console.log("final changes : ",input2.value);
+});
+
+input2.addEventListener("input",function()
+{
+    let p = document.querySelector("#inputpara");
+
+    p.innerText = input2.value;
+})
