@@ -109,3 +109,12 @@ input2.addEventListener("input",function()
 
     p.innerText = input2.value;
 })
+
+//practice qns -: green button 
+let btngreen = document.querySelector("#btngreen");
+
+btngreen.addEventListener("click",function()
+{
+    btngreen.style.backgroundColor = "green";
+})
+
