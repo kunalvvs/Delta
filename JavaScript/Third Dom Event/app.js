@@ -28,3 +28,42 @@ function sayHello()
 {
     alert("Hello");
 }
+
+//this keyword handle events
+
+let tbtn = document.querySelector("#this");
+let t = document.querySelector("#t");
+function change()
+{
+    console.log(`change color for ${this.innerText}`);
+   this.style.backgroundColor = "blue";
+}
+
+tbtn.addEventListener("click",change);
+t.addEventListener("click",change);
+
+
+//keyboard events
+
+let inp = document.querySelector("input");
+
+inp.addEventListener("keydown",function(event)
+{
+console.log(event);
+console.log("Key = ",event.key);
+console.log("COde = ",event.code);
+
+    if(event.code=="KeyW")
+    {
+        console.log("Key up");
+    }
+    else if(event.code=="KeyA"){
+        console.log("move left");
+    }
+    else if(event.code=="KeyD"){
+        console.log("move right");
+    }
+    else if(event.code=="KeyS"){
+        console.log("move down");
+    }
+})
