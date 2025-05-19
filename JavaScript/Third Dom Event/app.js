@@ -33,8 +33,9 @@ function sayHello()
 
 let tbtn = document.querySelector("#this");
 let t = document.querySelector("#t");
-function change()
+function change(event)
 {
+    event.stopPropagation();   //event bubbling 
     console.log(`change color for ${this.innerText}`);
    this.style.backgroundColor = "blue";
 }
