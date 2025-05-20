@@ -1,0 +1,39 @@
+
+
+body{
+    text-align: center;
+}
+
+.btn{
+    width: 200px;
+    height:200px;
+    border: 4px solid black;
+    border-radius: 8px;
+    margin: 10px;
+}
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+}
+
+
+.one{
+    background-color: coral;
+}
+
+.two{
+    background-color: blueviolet;
+}
+
+.three{
+    background-color: aquamarine;
+}
+
+.four{
+    background-color: cornflowerblue;
+}
+
+.flash{
+    background-color: white;
+}

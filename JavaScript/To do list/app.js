@@ -17,12 +17,10 @@ btn.addEventListener("click",function(event)
     inp.value =" ";
 })
 
-
-ol.addEventListener("click",function(){
+//for deletion 
+ol.addEventListener("click",function(event){
     let delbtn = event.target.classList.contains("delete");
     if(delbtn){
         event.target.parentNode.remove();
         }
-        
-
 })
