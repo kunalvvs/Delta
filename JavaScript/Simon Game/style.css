@@ -18,22 +18,26 @@ body{
 }
 
 
-.one{
+.orange{
     background-color: coral;
 }
 
-.two{
+.purple{
     background-color: blueviolet;
 }
 
-.three{
+.green{
     background-color: aquamarine;
 }
 
-.four{
+.sky{
     background-color: cornflowerblue;
 }
 
 .flash{
     background-color: white;
+}
+
+.userflash{
+    background-color: green;
 }
