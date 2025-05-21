@@ -1,3 +1,7 @@
+#scoreList{
+    text-align: left;
+    position: fixed;
+}
 
 
 body{
@@ -15,6 +19,7 @@ body{
 .btn-container{
     display: flex;
     justify-content: center;
+    
 }
 
 

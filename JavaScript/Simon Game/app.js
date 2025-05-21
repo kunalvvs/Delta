@@ -7,6 +7,8 @@ let level = 0;
 let btns = ["orange", "purple", "green", "sky"];
 
 let h2 = document.querySelector("h2");
+let scoreList = document.querySelector("#scoreList"); // Get the score list element
+let scores = []; // Array to store scores
 
 document.addEventListener("keypress", function () {
     if (!started) {
@@ -52,6 +54,7 @@ function checkAns(idx) {
         setTimeout(function () {
             document.body.classList.remove("game-over");
         }, 200);
+        addScore(level - 1); // Add score to the list
         resetGame();
     }
 }
@@ -74,4 +77,19 @@ function resetGame() {
     gameSeq = [];
     userSeq = [];
     level = 0;
+}
+
+// Add this function to handle score list
+function addScore(score) {
+    scores.push(score);
+    renderScores();
+}
+
+function renderScores() {
+    scoreList.innerHTML = "";
+    scores.forEach((score, idx) => {
+        let li = document.createElement("li");
+        li.innerText = `Game ${idx + 1}: Level ${score}`;
+        scoreList.appendChild(li);
+    });
 }
