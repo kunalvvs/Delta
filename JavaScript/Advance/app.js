@@ -1,6 +1,7 @@
 
 
 //call stack concept
+console.log("-------------Call Stack-----------------");
 function one()
 {
     return 1;
@@ -25,8 +26,9 @@ let h1 = document.querySelector("h1");
 function changeColor(color,delay,nextColor)
 {
     setTimeout(()=>{
+        console.log("-------------Callback Hell-----------------");
         h1.style.color=color;
-        if (nextColor()) nextColor;
+        if (nextColor) nextColor;
     },delay);
     
 }
@@ -41,6 +43,7 @@ changeColor("red",1000,()=>{
 
 function saveDB(data){
     return new Promise((resolve,reject)=>{
+       
         let internetSpeed = Math.floor( Math.random()*10)+1;
         if( internetSpeed > 4)
         {
@@ -55,6 +58,7 @@ function saveDB(data){
 // let request = saveDB("apna college"). then .catch  // request - > promise object
 saveDB("apna college")
 .then((result)=>{
+     console.log("-------------Promises-----------------");
     console.log("Data1 saved");
     console.log("Result : ",result);
     //console.log(request);
@@ -83,6 +87,7 @@ function changeColortwo(color,delay){
     return new Promise((resolve,reject)=>{
         setTimeout(()=>
             {
+                console.log("-------------Color using promise-----------------");
                 p.style.color = color;
                 resolve();
                 },delay);
@@ -105,3 +110,22 @@ changeColortwo("red",1000)
 .then(()=>{
     console.log("Yellow color completed");
 });
+
+//async keyword 
+
+async function print() {
+    
+    return "hello";
+}
+
+print()
+.then((result)=>{
+    console.log("-------------Async-----------------");
+    console.log("Promise is resolved ",result);
+})
+.catch ((error)=>{
+    console.log("Promise is rejected",error);
+});
+
+//await
+
