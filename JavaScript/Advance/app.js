@@ -128,4 +128,53 @@ print()
 });
 
 //await
+let aw = document.querySelector("#await");
+
+function Colorawait(color,delay)
+{
+    return new Promise((resolve,reject)=>
+        {
+            setTimeout(()=>
+                {
+                    let n = Math.floor(Math.random()*10)+1;
+                    if(n>3)
+                    {
+                        return reject("Rejected await ");
+                    }
+
+                    console.log("-------------Color using await-----------------");
+                    aw.style.color = color;
+                    resolve("color changes using await");
+                    },delay);
+                    });
+                    
+}
+
+async function demo() {
+    try{      //it can be handle the rejection 
+    await Colorawait("red",1000);
+    await Colorawait("yellow",1000);
+    await Colorawait("green",1000);
+    await Colorawait("blue",1000);
+    } catch(err){
+      console.log("Reject caught",err);
+    }
+}
+
+demo();
+
+//JSON
+
+let jsxon = '{"fact":"Phoenician cargo ships are thought to have brought the first domesticated cats to Europe in about 900 BC.","length":105}';
+
+let printJson = JSON.parse(jsxon);   //JSON to JS Object
+console.log(printJson.fact);
+
+let stu = {
+    name : "Kunal",
+    age : 4
+};
+
+let convertJson = JSON.stringify(stu);   //JS Object to JSON
+console.log(convertJson);     
 
