@@ -11,7 +11,6 @@ fetch(url)
 .then((data)=>{
     console.log("Data 1 ",data.fact);
     p1.innerText = data.fact;
-    document.querySelector("body").append(p1);
     return fetch(url);
 })
 .then((res)=>{
@@ -19,6 +18,7 @@ fetch(url)
 })
 .then((data2)=>{
     console.log("Data 2 ",data2.fact);
+    p1.innerText = data2.fact;
 })
 .catch((err)=>{
     console.log("Error is ",err);
