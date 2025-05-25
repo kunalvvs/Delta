@@ -10,7 +10,8 @@ function App(p) {
   return <>
   
     <h1 className='h1 p-10 '>First React App </h1>
-    <h3>It is description {p.name} </h3>
+    <h3>It is description.
+      Again it is beginning of react 25th May 25 {p.name} </h3>
    <Second />
   
   </>
