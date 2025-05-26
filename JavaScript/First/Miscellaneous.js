@@ -6,6 +6,7 @@
 // array method: for each,reduce,some,every,map,filter.Arrow
 // Default parameter
 // Spreading
+//Rest concept
 //Destructuring :array,objects
 
 
