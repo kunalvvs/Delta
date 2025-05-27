@@ -86,7 +86,7 @@ let form2  = document.querySelector("#form2");
 
 form2.addEventListener("submit",function(event)
 {
-    event.preventDefault();
+    event.preventDefault();     //it prevent from form action perform which given inside form attribute
     let user = document.querySelector("#user");
     let pass = document.querySelector("#pass");
 
