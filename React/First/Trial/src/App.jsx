@@ -5,7 +5,6 @@ import './App.css'
 import Second from './Second.jsx'
 
 
-
 function App(p) {
   return <>
   

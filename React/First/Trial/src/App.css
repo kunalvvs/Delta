@@ -43,9 +43,9 @@
 
 
 #ccc{
-  color:blueviolet;
+  color:rgb(190, 227, 71);
   border: 2px solid red;
-  padding: 3%;
+  padding: 1px;
   
   /* padding-bottom: 12px; */
   font-size: 25px;
@@ -55,6 +55,7 @@
 #ccc:hover{
   transform: scale(1.1);
   transition: 1s;
-  background-color: aquamarine;
+  background-color: rgb(253, 255, 254);
   /* border-radius: 12px; */
+  color: black;
 }

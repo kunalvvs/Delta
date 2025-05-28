@@ -24,8 +24,8 @@ const pow = (a,b) =>{
 console.log("Power : ",pow(4,2));
 
 //Arrow function using implicit 
-const add = (a,b) => (a+b);
-console.log("Add using implicit : ",add(4,5));
+const add1 = (a,b) => (a+b);
+console.log("Add using implicit : ",add1(4,5));
 
 
 //set timeout function

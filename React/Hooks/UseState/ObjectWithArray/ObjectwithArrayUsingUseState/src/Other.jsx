@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 function Other() {
     const [click, setClick] = useState([]);
 
-    const addNumber = () => {
+    const addNumber = () => {  //arrow function
         setClick([
             ...click,
             {
