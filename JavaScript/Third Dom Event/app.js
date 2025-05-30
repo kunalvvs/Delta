@@ -37,7 +37,7 @@ function change(event)
 {
     event.stopPropagation();   //event bubbling 
     console.log(`change color for ${this.innerText}`);
-   this.style.backgroundColor = "blue";
+   this.style.backgroundColor = "green";
 }
 
 tbtn.addEventListener("click",change);
