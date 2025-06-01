@@ -23,5 +23,3 @@ var [a,b]=useState(0);  //for data changing and sending and receiving
 }
 
 export default App
-
-
