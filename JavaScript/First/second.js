@@ -7,7 +7,7 @@
 // repeat  
 
 
-console.log("Methods Started ................");
+console.log("String Methods Started ................");
 
 
 //trim method in string
