@@ -48,19 +48,17 @@ setTimeout(()=>{
 
 //array methods 
 let arr = [23,43,22];
-arr.forEach((h)=>{    //for each loop
-  console.log("For each loop",h);
+arr.forEach((h,i)=>{    //for each loop
+  console.log("For each loop",h," at index ",i);
 })
 
 
-let intoo = arr.map((el)=>{
-    return el*2;  //map
-})
+let intoo = arr.map(el=>el*2)
+       //map
 console.log("Using Map",intoo);
 
-let newArr = arr.filter((ed)=>{   //filter 
-    return ed%2==0;
-})
+let newArr = arr.filter(ed=> ed%2==0)  //filter 
+    
 
 console.log("Using filter : ",newArr);
 
@@ -70,7 +68,7 @@ let ev = arr.every((el)=>{  //every method used to AND oper unlike some met used
 
 
 
-let red = arr.reduce((res,el)=>{
+let red = arr.reduce((res,el)=>{  // it convert the output into single value 
 return res+el;
 })
 console.log("Using Reduce fun:",red);
@@ -92,7 +90,7 @@ console.log("Max value Using Spread ",maxValue);
 //destructuring array
 
 let des = ["tony","peter","xyz","pyq"];
-let [win,sec,...others] = des;       //rest concept using ...others
+let [win,sec,...others] = des;       //rest concept using ...others in destructuring
 console.log("Winner: ",win,"\nothers: ",others);
 
 //destructuring objects 

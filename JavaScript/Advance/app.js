@@ -32,7 +32,7 @@ function changeColor(color,delay,nextColor)
     },delay);
     
 }
-
+//using call back hell color changing
 changeColor("red",1000,()=>{
     changeColor("blue",1000,()=> {
         changeColor("green",1000 );
