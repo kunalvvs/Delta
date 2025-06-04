@@ -28,7 +28,7 @@ function changeColor(color,delay,nextColor)
     setTimeout(()=>{
         console.log("-------------Callback Hell-----------------");
         h1.style.color=color;
-        if (nextColor) nextColor;
+        if (nextColor) {nextColor}
     },delay);
     
 }
@@ -137,7 +137,7 @@ function Colorawait(color,delay)
             setTimeout(()=>
                 {
                     let n = Math.floor(Math.random()*10)+1;
-                    if(n>3)
+                    if(n>10)
                     {
                         return reject("Rejected await ");
                     }
@@ -168,7 +168,7 @@ demo();
 let jsxon = '{"fact":"Phoenician cargo ships are thought to have brought the first domesticated cats to Europe in about 900 BC.","length":105}';
 
 let printJson = JSON.parse(jsxon);   //JSON to JS Object
-console.log(printJson.fact);
+console.log("JSON to Object->" ,printJson.fact);
 
 let stu = {
     name : "Kunal",
@@ -176,5 +176,5 @@ let stu = {
 };
 
 let convertJson = JSON.stringify(stu);   //JS Object to JSON
-console.log(convertJson);     
+console.log("Converted JSON -> " ,convertJson);     
 
