@@ -1,5 +1,5 @@
 function handleFormSubmit(event){
- event.preventDefault();
+ event.preventDefault();  //it prevent form action 
 console.log("Form was submitted");
 }
 

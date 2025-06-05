@@ -4,6 +4,7 @@ import Buttons from './Buttons'
 import Events from './Buttons'
 import Form from './Form'
 
+import React, { useState } from "react";
 // function App() {
   
 
@@ -21,7 +22,6 @@ import Form from './Form'
 // export default App
 
 
-import React, { useState } from "react";
 function App() {
 	const [value, setValue] = useState("");
 	function handleChange(e) {
@@ -40,6 +40,8 @@ function App() {
 			<input value={value} onChange={handleChange} />
 			<br />
 			<div>User Input:- {value}</div>
+			<Buttons/>
+			<Form/>
 		</div>
 	);
 }
