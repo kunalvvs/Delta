@@ -1,11 +1,27 @@
 import { useState } from "react"
 
 
+function getInit()
+{
+    return 0;
+}
+
 export default function Counter()
 {
-    let [count,setCount] = useState(0);
+    let [count,setCount] = useState(getInit);  //we can pass function in initial value
   
     let Inc =() => {setCount(count+1)};
+
+
+    let IncByCallBack = ()=>{   //Callback in setstate
+        setCount((currVal)=>{
+            return currVal+1;
+        });
+        setCount((currVal)=>{
+            return currVal+1;
+        });
+    };
+
     return <>
     
     <h3 style={{border:"2px solid grey",borderRadius:"8px"}}> Counter value is {count}</h3>
@@ -15,6 +31,7 @@ export default function Counter()
             </button> 
 
     <button style={{border:"2px solid yellow" }} onClick={Inc}>Add this</button>
+    <button onClick={IncByCallBack}>Double Inc</button>
     </>
 }
 

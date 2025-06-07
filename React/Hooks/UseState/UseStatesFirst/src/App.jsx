@@ -10,9 +10,9 @@ function App() {
   return (
     <>
      <h2 style={{color:"orange"}}>Lets Start The Hooks First Topic is UseState</h2>
-     {/* <Counter/> */}
-     {/* <LikeButton/> */}
-    <PasswordGenerator/>  
+     <Counter/>
+     <LikeButton/>
+    {/* <PasswordGenerator/>   */}
     
     </>
   )
