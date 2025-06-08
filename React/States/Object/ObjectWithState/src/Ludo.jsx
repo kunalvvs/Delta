@@ -17,7 +17,6 @@ export default function Ludo( )
         return {...previousMove, blue: previousMove.blue+1}
       });
 
-
       setArr((prevArr)=>{
         return [...prevArr,"blue moves"]     //array state
       })
