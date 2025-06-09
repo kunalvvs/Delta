@@ -2,14 +2,14 @@ import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 
 export default function Todo() {
-    const [task, setTask] = useState([{task:"sample-task",id:uuidv4()}]);  
+    const [task, setTask] = useState([{task:"sample-task",id:uuidv4(), isDone:false}]);  
     //Array of object
     const [newTodo, setNewTodo] = useState("");
 
     let addtask = () => {
         if (newTodo.trim() !== "") {
             setTask((prevTask)=>{
-                return [...prevTask, {task: newTodo,id:uuidv4()}]
+                return [...prevTask, {task: newTodo,id:uuidv4(),isDone:false}]
         });
             setNewTodo(""); // Clear the input after adding the task
         }
@@ -27,12 +27,12 @@ export default function Todo() {
     }
 
        // Convert all tasks to uppercase
-    let UpperCaseAll = () => {
+    let isDoneMark = () => {
         setTask((prevTasks) =>
             prevTasks.map((todo) => {
                 return {
                     ...todo,
-                    task: todo.task.toUpperCase(),
+                    isDone:true,
                 };
             })
         );
@@ -40,13 +40,13 @@ export default function Todo() {
 
 
     // Convert a single task to uppercase
-    let upperCaseOne = (id) => {
+    let isDoneMarkOne = (id) => {
         setTask((prevTasks) =>
             prevTasks.map((todo) => {
                 if (todo.id === id) {
                     return {
                         ...todo,
-                        task: todo.task.toUpperCase(),
+                      isDone:true
                     };
                 } else {
                     return todo;
@@ -61,19 +61,19 @@ export default function Todo() {
                 value={newTodo}
                 onChange={updateList}
             ></input>
-            <button onClick={addtask}>Add task</button>
+            <button style={{backgroundColor:"gray"}} onClick={addtask}>Add task</button>
             <h2>Task Todo</h2>
-            <ul>
+            <ul >
                 {task.map((todo) => (    
         //map is recomended to used the show list in the arrya in react 
-                   <span> <li key={todo.id}>{todo.task}
-                    <button onClick={()=>deleteTask(todo.id)}>Delete</button> 
-                    <button onClick={()=>upperCaseOne(todo.id)}>UpperCase</button>
+                   <span style={todo.isDone ? {textDecorationLine:"line-through"}:{}} > <li key={todo.id}>{todo.task}
+                    <button id="deletebtn" onClick={()=>deleteTask(todo.id)}>Delete</button> 
+                    <button id="markbtn" onClick={()=>isDoneMarkOne(todo.id)}>Mark Done</button>
                     </li></span>
                     
                 ))}
             </ul>
-            <button onClick={UpperCaseAll}>UpperCase All</button>
+            <button  onClick={isDoneMark}>Mark Done All</button>
         </div>
     );
 }

@@ -40,3 +40,17 @@
 .read-the-docs {
   color: #888;
 }
+
+
+button{
+  margin: 7px;
+  padding: 7px;
+}
+
+#deletebtn{
+  background-color: red;
+}
+
+#markbtn{
+  background-color: green;
+}
