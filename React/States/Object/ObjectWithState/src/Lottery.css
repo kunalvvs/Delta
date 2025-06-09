@@ -1,0 +1,14 @@
+
+.ticket{
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+span{
+    margin: 6px;
+}
+
+button:hover{
+   background-color: rgb(252, 40, 86);
+   transition: 1s;
+}

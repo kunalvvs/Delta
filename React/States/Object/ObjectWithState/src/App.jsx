@@ -4,10 +4,12 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Ludo from './Ludo'
 import Todo from './Todo'
+import Lottery from './Lottery'
 
 function App() {
   return (
-    <Todo/>
+    <Lottery/>
+    // <Todo/>
     // <Ludo/>
   )
 }
