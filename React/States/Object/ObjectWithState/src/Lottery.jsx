@@ -16,7 +16,7 @@ export default function Lottery(){
         <div>
             <h1>Lottery Game</h1>
             <div className="ticket">
-            <span >
+            <span>
                 {ticket[0]} </span>
               <span>{ticket[1]}</span>  
               <span> {ticket[2]}</span> 
