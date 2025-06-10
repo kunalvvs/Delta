@@ -16,12 +16,9 @@ export default function Lottery(){
         <div>
             <h1>Lottery Game</h1>
             <div className="ticket">
-            <span>
-                {ticket[0]} </span>
+            <span> {ticket[0]} </span>
               <span>{ticket[1]}</span>  
               <span> {ticket[2]}</span> 
-             
-            
            </div>
             <button onClick={getNewTicket}> New Ticket</button>
           <h3> {isWinning && "Congratulation you won"}</h3>
