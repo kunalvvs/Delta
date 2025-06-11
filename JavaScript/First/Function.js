@@ -42,6 +42,27 @@ function getAdd(n) //sum of natural num
 
 //higher order function
 //lexical scope
+
+let globalVar = "I am everywhere";
+
+function outerFunction()
+{
+    let outerVar = " I am in outer";
+
+    function innerFunc()
+    {
+        let innerVar = "i am in inner";
+
+        console.log("Inner Var : ",innerVar);
+        console.log("Outer Var inside inner func : ",outerVar);
+        console.log("Global Var inside inner func : ",globalVar);
+    }
+
+    innerFunc();
+    // console.log("Inner Var in outer ",innerVar);// it will give error , outer can not see the inner 
+}
+
+outerFunction();
 //methods
 
 
