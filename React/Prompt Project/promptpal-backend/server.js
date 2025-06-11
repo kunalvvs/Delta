@@ -6,6 +6,12 @@ require('dotenv').config();
 const promptRoutes = require('./routes/promptRoutes');
 
 const app = express();
+
+app.get('/', (req, res) => {
+  res.send('PromptPal Backend is running 🚀');
+});
+
+
 app.use(cors());
 app.use(express.json());
 app.use('/api/prompts', promptRoutes);

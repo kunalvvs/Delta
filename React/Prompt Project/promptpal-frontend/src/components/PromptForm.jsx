@@ -6,17 +6,18 @@ const PromptForm = () => {
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async () => {
-    if (!text.trim()) return;
-    setLoading(true);
-    try {
-      const res = await axios.post('http://localhost:5000/api/prompts/analyze', { text });
-      setResponse(res.data);
-    } catch (err) {
-      alert('AI failed to respond');
-    }
-    setLoading(false);
-  };
+const handleSubmit = async () => {
+  if (!text.trim()) return;
+  setLoading(true);
+  try {
+    const res = await axios.post('http://localhost:5000/api/prompts/analyze', { text });
+    setResponse(res.data);
+  } catch (err) {
+    console.error('Error:', err.message);
+    alert('Failed to connect to the server. Please try again later.');
+  }
+  setLoading(false);
+};
 
   return (
     <div className="bg-white p-6 rounded-xl shadow-md mb-8">
