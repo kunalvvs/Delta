@@ -15,10 +15,15 @@ export default function WeatherApp()
         humidity : 60.0,
         weather : "Haze"
     })
+
+    let updateInfo =(newInfo)=>{
+        setWeather(newInfo);
+    }
+
     return (
         <div>
             <h2>Weather App</h2>
-            <SearchBox/>
+            <SearchBox updateInfo={updateInfo}/>
             <InfoBox info={weather}/>
         </div>
     )

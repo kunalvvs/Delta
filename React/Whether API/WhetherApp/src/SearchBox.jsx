@@ -4,16 +4,18 @@ import { useState } from 'react';
 
 
 
-export default function SearchBox(){
+export default function SearchBox({updateInfo}){
 
     let [city,setCity] = useState("");
-    
+    let [error,setError] = useState(false);  //for error handle when some place is not exist in API
 
     const API_URL = "https://api.openweathermap.org/data/2.5/weather";
     const API_Key = "773216d7247c616f5c3578401e71e6e1";
 
     let getWeather =async ()=>{
-       let response = await fetch(`${API_URL}?q=${city}&appid=${API_Key}&units=metric`);
+
+        try{
+            let response = await fetch(`${API_URL}?q=${city}&appid=${API_Key}&units=metric`);
        let data = await response.json();
        console.log(data);
        let result = {
@@ -27,17 +29,31 @@ export default function SearchBox(){
        }
 
        console.log(result);
+       return result;
+        }
+        catch(error)
+        {
+            
+            throw error;
+        }
+       
     }
 
     let handleChange = (evt) =>{
         setCity(evt.target.value);
     }
 
-    let handleSubmit = (evt)=>{
-        evt.preventDefault();
+    let handleSubmit = async (evt)=>{
+      try{  evt.preventDefault();
         console.log(city)
         setCity("");
-        getWeather();
+      let newInfo =  await  getWeather();
+      updateInfo(newInfo);
+      }
+      catch(error)
+      {
+        setError(true);
+      }
     }
 
     return (
@@ -51,7 +67,7 @@ export default function SearchBox(){
                     Search
                     </Button>
 
-             
+             {error && <p style={{color:"red"}}>No such a place exist</p>}
                  
                     
             </form>
