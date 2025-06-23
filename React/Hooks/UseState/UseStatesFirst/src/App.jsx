@@ -4,6 +4,8 @@ import Counter from './Counter'
 import LikeButton from './LikeButton'
 import PasswordGenerator from './PasswordGenerator' //this is cpy pst cde
 import InputExa from './InputExa'
+import Div from './Div'
+import Div1 from './Div1'
 
 
 function App() {
@@ -12,7 +14,10 @@ function App() {
     <>
      <h2 style={{color:"orange"}}>Lets Start The Hooks First Topic is UseState</h2>
      {/* <Counter/> */}
-     <InputExa/>
+     {/* <InputExa/> */}
+     <Div/>
+     <p>-------------------------------------------------</p>
+     <Div1/>
      <LikeButton/>
     {/* <PasswordGenerator/>   */}
     
