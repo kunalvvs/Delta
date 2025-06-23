@@ -53,7 +53,7 @@ const ClassInfo = [
 ];
 
 //random integer 1 to 10'
-let n = Math.floor( Math.random()*10 ) +1;
+let n = Math.floor( Math.random()*10 )+1 ;
 console.log("Random Number ",n);
 //random num from 1 to 5
 let n1 = Math.floor( Math.random()*5 ) +1;

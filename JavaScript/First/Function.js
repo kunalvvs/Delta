@@ -40,6 +40,11 @@ function getAdd(n) //sum of natural num
     return s;
 }
 
+// Arrow function example
+const multiply = (x, y) => x * y;
+
+console.log("Multiplication value return:", multiply(4, 5));
+
 //higher order function
 //lexical scope
 

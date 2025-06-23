@@ -44,6 +44,7 @@ console.log("Slice method : ", ar1.slice(1));
 
 console.log("-----------------------------------");
 console.log("Splice method: ",ar2.splice(0,1,"Supra","Lambo"));
+console.log("After Splice : ",ar2);
 
 //sort method - it convert number into string for sorting
 console.log("-----------------------------------");
