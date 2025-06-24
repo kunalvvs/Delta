@@ -1,0 +1,15 @@
+
+.one{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+.two{
+    width: 100px;
+    height: 100px;
+    background-color: brown;
+}
+
+.hidden{
+    display: none;
+}
