@@ -14,7 +14,7 @@ function App() {
     <>
      <h2 style={{color:"orange"}}>Lets Start The Hooks First Topic is UseState</h2>
      {/* <Counter/> */}
-     {/* <InputExa/> */}
+     <InputExa/>
      <Div/>
      <p>-------------------------------------------------</p>
      <Div1/>
