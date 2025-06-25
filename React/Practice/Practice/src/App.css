@@ -1,0 +1,26 @@
+
+
+.one{
+  background-color: rgb(236, 191, 12);
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  border: 5px solid goldenrod;
+  border-radius: 10px;
+
+}
+
+
+.two{
+  background-color: rgb(20, 103, 171);
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  border: 5px solid rgb(154, 228, 27);
+  border-radius: 10px;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+}
