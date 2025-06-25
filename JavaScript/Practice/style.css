@@ -3,8 +3,10 @@
     width: 100px;
     height: 100px;
     background-color: blue;
+
 }
 .two{
+    margin-left: 150px;
     width: 100px;
     height: 100px;
     background-color: brown;
@@ -12,4 +14,9 @@
 
 .hidden{
     display: none;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
 }
