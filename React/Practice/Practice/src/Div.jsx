@@ -20,8 +20,8 @@ export default function Div()
     return ( 
         <div>
 
-          { one &&  <div className="one"  ></div>}  
-           { two && <div className="two"></div>}
+          { one &&  <div className="one"  >First</div>}  
+           { two && <div className="two">Second</div>}
             <button onClick={handleState}>Toggle</button>
 
 
