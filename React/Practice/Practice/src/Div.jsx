@@ -26,7 +26,7 @@ export default function Div()
 
 
             <div>
-            {isOneVisible ? <div className="one"></div> : <div className="two"></div>}
+            {isOneVisible ? <div className="one">First</div> : <div className="two">Second</div>}
             <button onClick={handleToggle}>Toggle</button> 
         </div>
         </div>
