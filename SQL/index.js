@@ -10,16 +10,23 @@ const connection = mysql.createConnection({
   password : 'Server404#'
 });
 
+let q = "SHOW TABLES";
+
 try{
-connection.query("SHOW TABLES" , 
+connection.query(q , 
     (err, results) => {
         if (err) throw err;
+        console.log(results);    //print the data
+        console.log(results.length);
+        console.log(results[0]);
     });
 }
 catch (err)
 {
     console.log(err);
 }
+
+connection.end();
 
 let getRandomUser = ()=> {
   return {
