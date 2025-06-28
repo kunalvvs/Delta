@@ -2,7 +2,10 @@ const { faker } = require('@faker-js/faker');
 const mysql = require('mysql2');
 const express = require("express");
 let app = express();
+const path = require("path");
 
+app.set("view engine" , "ejs" );
+app.set("views" ,path.join(__dirname,"/views"));
 
 // Create the connection to database
 const connection = mysql.createConnection({
@@ -50,14 +53,17 @@ let getRandomUser = ()=> {
 
 // console.log(getRandomUser());
 
+
+
+//Home Page Route
 app.get("/",(req,res)=>{
   let q = `SELECT count(*) FROM user`;
   try{
     connection.query(q ,
         (err, results) => {
             if (err) throw err;
-            console.log(results);    //print the data
-          res.send(results);
+            let count = results[0] ["count(*)"];    //print the data
+          res.render("home.ejs",{count});
         });
     }
     catch (err)
@@ -67,6 +73,42 @@ app.get("/",(req,res)=>{
     }
   
 })
+
+//Show User Route
+app.get("/user",(req,res)=>{
+  let q = `SELECT * FROM user`;
+  try{
+    connection.query(q ,
+      (err, users) =>
+        {
+          if (err) throw err;
+          res.render("user.ejs",{users});
+          });
+}
+catch (err)
+{
+  res.send("Error found in DB");
+}
+})
+
+
+//EDIT route
+app.get("/user/:id/edit", (res,req)=>{
+  let q = `SELECT * FROM user WHERE id = ?`;
+  try{
+    connection.query(q,[req.params.id],
+      (err, user) =>
+        {
+          if (err) throw err;
+          res.render("edit.ejs",{user});
+          });
+        }
+        catch(err)
+        {
+          res.send("some error found");
+        }
+})
+
 
 app.listen("8080",()=>{
   console.log("Server is running on port 8080");
