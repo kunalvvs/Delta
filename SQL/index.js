@@ -3,7 +3,10 @@ const mysql = require('mysql2');
 const express = require("express");
 let app = express();
 const path = require("path");
+const methodOverride = require("method-override");
 
+app.use(methodOverride("_method"));
+app.use(express.urlencoded({extended:true}));
 app.set("view engine" , "ejs" );
 app.set("views" ,path.join(__dirname,"/views"));
 
@@ -93,13 +96,15 @@ catch (err)
 
 
 //EDIT route
-app.get("/user/:id/edit", (res,req)=>{
-  let q = `SELECT * FROM user WHERE id = ?`;
+app.get("/user/:id/edit", (req,res)=>{
+   let {id}  = req.params;
+  let q = `SELECT * FROM user WHERE id = '${id}'`;
+ 
   try{
-    connection.query(q,[req.params.id],
-      (err, user) =>
+    connection.query(q,(err, results) =>
         {
           if (err) throw err;
+          let user =  results[0];
           res.render("edit.ejs",{user});
           });
         }
@@ -109,6 +114,9 @@ app.get("/user/:id/edit", (res,req)=>{
         }
 })
 
+app.patch("/user/:id",(req,res)=>{
+
+})
 
 app.listen("8080",()=>{
   console.log("Server is running on port 8080");
