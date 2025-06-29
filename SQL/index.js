@@ -114,8 +114,35 @@ app.get("/user/:id/edit", (req,res)=>{
         }
 })
 
-app.patch("/user/:id",(req,res)=>{
 
+//Update Route
+app.patch("/user/:id",(req,res)=>{
+  let {id}  = req.params;
+  let {username: formUsername, password:formPassword} = req.body;
+  let q = `SELECT * FROM user WHERE id = '${id}'`;
+ 
+  try{
+    connection.query(q,(err, results) =>
+        {
+          if (err) throw err;
+          let user =  results[0]; 
+          if( formPassword!= user.password){
+          res.send("Wrong Password");
+          }
+          else
+          {
+            let q2 = `UPDATE user SET username = '${formUsername}' WHERE id ='${user.id}'`;
+            connection.query(q2,(err,results)=>{
+              if (err) throw err;
+              res.redirect("/user");
+            })
+          }
+          });
+        }
+        catch(err)
+        {
+          res.send("some error found");
+        }
 })
 
 app.listen("8080",()=>{
