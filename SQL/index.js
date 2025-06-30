@@ -145,6 +145,10 @@ app.patch("/user/:id",(req,res)=>{
         }
 })
 
+
+//new route for add user 
+
+
 app.listen("8080",()=>{
   console.log("Server is running on port 8080");
 })
