@@ -1,27 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import { getStartupById, updateStartup } from '../services/api';
+import { useParams, useNavigate } from 'react-router-dom';
 import '../layout.css';
 
-const UpdateStartup = ({ match, history }) => {
+const UpdateStartup = () => {
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
     const [website, setWebsite] = useState('');
+    const { id } = useParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchStartup = async () => {
-            const startup = await getStartupById(match.params.id);
+            const startup = await getStartupById(id);
             setName(startup.name);
             setDescription(startup.description);
             setWebsite(startup.website);
         };
         fetchStartup();
-    }, [match.params.id]);
+    }, [id]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         const updatedStartup = { name, description, website };
-        await updateStartup(match.params.id, updatedStartup);
-        history.push('/'); // Redirect to the startup list after updating
+        await updateStartup(id, updatedStartup);
+        navigate('/');
     };
 
     return (

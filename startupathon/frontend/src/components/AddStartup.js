@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import { addStartup } from '../services/api';
+import { useNavigate } from 'react-router-dom';
 import '../layout.css';
 
 const AddStartup = () => {
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
     const [website, setWebsite] = useState('');
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         const newStartup = { name, description, website };
         await addStartup(newStartup);
-        setName('');
-        setDescription('');
-        setWebsite('');
+        navigate('/');
     };
 
     return (
