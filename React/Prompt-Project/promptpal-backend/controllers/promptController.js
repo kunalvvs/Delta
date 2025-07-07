@@ -7,52 +7,54 @@ const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
 exports.analyzePrompt = async (req, res) => {
   const { text } = req.body;
 
+  if (!text || !text.trim()) {
+    return res.status(400).json({ error: 'Prompt text is required' });
+  }
+
   try {
-    const result = await model.generateContent(`Analyze the following prompt and return:
-1. Power Score (1-10)
-2. Suggestions to improve it
-3. A rewritten version of the prompt
+    const prompt = `Analyze the following prompt and provide a structured response:
 
-Prompt: "${text}"`);
+Prompt: "${text}"
 
+Please respond in this exact format:
+SCORE: [1-10]
+SUGGESTIONS: [Your improvement suggestions]
+REWRITE: [Improved version of the prompt]`;
+
+    const result = await model.generateContent(prompt);
     const reply = result.response.text();
 
-    const scoreMatch = reply.match(/Power Score.*?(\d+)/i);
-    const score = scoreMatch ? parseInt(scoreMatch[1]) : 5;
+    // Parse the structured response
+    const scoreMatch = reply.match(/SCORE:\s*(\d+)/i);
+    const suggestionsMatch = reply.match(/SUGGESTIONS:\s*([\s\S]*?)(?=REWRITE:|$)/i);
+    const rewriteMatch = reply.match(/REWRITE:\s*([\s\S]*?)$/i);
 
-    const prompt = new Prompt({
-      text,
+    const score = scoreMatch ? parseInt(scoreMatch[1]) : 5;
+    const suggestions = suggestionsMatch ? suggestionsMatch[1].trim() : 'No suggestions available';
+    const rewrite = rewriteMatch ? rewriteMatch[1].trim() : 'No rewrite available';
+
+    const promptDoc = new Prompt({
+      text: text.trim(),
       score,
-      suggestions: reply,
-      rewrite: reply, // Can parse more if needed
+      suggestions,
+      rewrite,
     });
 
-    await prompt.save();
-    res.json(prompt);
+    await promptDoc.save();
+    res.json(promptDoc);
   } catch (err) {
-    console.error(err.message);
-    res.status(500).json({ error: 'Gemini analysis failed' });
-  }
-};
-
-
-
-// ✅ Existing: analyzePrompt
-exports.analyzePrompt = async (req, res) => {
-  const { text } = req.body;
-  try {
-    // ... your existing logic
-  } catch (err) {
-    res.status(500).json({ error: 'Analysis failed' });
+    console.error('Analysis error:', err.message);
+    res.status(500).json({ error: 'AI analysis failed. Please try again.' });
   }
 };
 
 // ✅ Add this: getPromptHistory (missing before!)
 exports.getPromptHistory = async (req, res) => {
   try {
-    const prompts = await Prompt.find().sort({ createdAt: -1 });
+    const prompts = await Prompt.find().sort({ createdAt: -1 }).limit(20);
     res.json(prompts);
   } catch (err) {
-    res.status(500).json({ error: 'Fetching history failed' });
+    console.error('History fetch error:', err.message);
+    res.status(500).json({ error: 'Failed to fetch prompt history' });
   }
 };
