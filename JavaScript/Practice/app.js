@@ -13,3 +13,21 @@ btn.addEventListener("click", function () {
         two.classList.remove("hidden");
     }
 });
+
+//for practice of looping concept 
+let str = ["kfsd","vdsv","dsd"];
+
+for(let i=0;i<str.length;i++)
+{
+    console.log(str[i]);
+}
+
+for( obj of str)
+{
+    console.log(obj)
+}
+
+for( obj1 in str)
+{
+    console.log(` on positon ${obj1} is ${str[obj1]}`);
+}
