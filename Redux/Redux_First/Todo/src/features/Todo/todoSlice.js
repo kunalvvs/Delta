@@ -25,10 +25,12 @@ export const todoSlice = createSlice({
         isMarkDone:(state,action)=>{
             state.todos = state.todos.map(todo=>{
                 if(todo.id === action.payload){
-                    return {...todo,isDone:true}
-                
+                    return {...todo, isDone: !todo.isDone};
+                }
+                return todo;
+            });
         }
-    })}}
+    }
 })
 
 export const {addTodo,deleteTodos,isMarkDone}= todoSlice.actions;

@@ -26,7 +26,7 @@ export default function Todo() {
         ))
     }
 
-       // Convert all tasks to uppercase
+       // Convert all markdone
     let isDoneMark = () => {
         setTask((prevTasks) =>
             prevTasks.map((todo) => {
@@ -39,7 +39,7 @@ export default function Todo() {
     };
 
 
-    // Convert a single task to uppercase
+    // single markdone
     let isDoneMarkOne = (id) => {
         setTask((prevTasks) =>
             prevTasks.map((todo) => {
