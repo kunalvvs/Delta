@@ -1,7 +1,13 @@
 import { useState, useEffect } from 'react';
+import { useAuth } from '../contexts/AuthContext';
 import axios from 'axios';
 
+// Configure axios base URL
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+axios.defaults.baseURL = API_URL;
+
 const PromptForm = ({ onAnalysisComplete }) => {
+  const { isAuthenticated } = useAuth();
   const [text, setText] = useState('');
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -18,6 +24,11 @@ const PromptForm = ({ onAnalysisComplete }) => {
   }, [text]);
 
   const handleSubmit = async () => {
+    if (!isAuthenticated) {
+      setError('Please sign in to analyze prompts');
+      return;
+    }
+
     if (!text.trim()) {
       setError('Please enter a prompt to analyze');
       return;
@@ -28,7 +39,7 @@ const PromptForm = ({ onAnalysisComplete }) => {
     setResponse(null);
 
     try {
-      const res = await axios.post('http://localhost:5000/api/prompts/analyze', { 
+      const res = await axios.post('/prompts/analyze', { 
         text: text.trim() 
       });
       setResponse(res.data);

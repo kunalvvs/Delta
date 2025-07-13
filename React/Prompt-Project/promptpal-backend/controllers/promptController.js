@@ -38,6 +38,7 @@ REWRITE: [Improved version of the prompt]`;
       score,
       suggestions,
       rewrite,
+      user: req.userId, // Associate with authenticated user
     });
 
     await promptDoc.save();
@@ -51,7 +52,11 @@ REWRITE: [Improved version of the prompt]`;
 // ✅ Add this: getPromptHistory (missing before!)
 exports.getPromptHistory = async (req, res) => {
   try {
-    const prompts = await Prompt.find().sort({ createdAt: -1 }).limit(20);
+    // Only get prompts for the authenticated user
+    const prompts = await Prompt.find({ user: req.userId })
+      .sort({ createdAt: -1 })
+      .limit(20)
+      .populate('user', 'username email');
     res.json(prompts);
   } catch (err) {
     console.error('History fetch error:', err.message);

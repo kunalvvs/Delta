@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: promptpal-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGO_URI
+        fromDatabase:
+          name: promptpal-db
+          property: connectionString
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: FRONTEND_URL
+        value: https://promptpal-frontend.onrender.com
+
+databases:
+  - name: promptpal-db
+    databaseName: promptpal
+    user: promptpal

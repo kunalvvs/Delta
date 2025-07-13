@@ -1,9 +1,20 @@
 import { useState, useEffect } from 'react';
+import { AuthProvider } from './contexts/AuthContext';
 import PromptForm from './components/PromptForm';
 import PromptHistory from './components/PromptHistory';
+import Header from './components/Header';
+import './index.css';
 
 
 function App() {
+  return (
+    <AuthProvider>
+      <AppContent />
+    </AuthProvider>
+  );
+}
+
+function AppContent() {
   const [refreshKey, setRefreshKey] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -20,6 +31,9 @@ function App() {
 
   return (
     <div className={`min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 transition-all duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+      {/* Header */}
+      <Header />
+      
       {/* Animated background particles */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-white rounded-full animate-pulse opacity-20"></div>
@@ -28,7 +42,7 @@ function App() {
         <div className="absolute bottom-1/4 left-1/2 w-1 h-1 bg-pink-300 rounded-full animate-pulse opacity-25"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto p-4">
+      <div className="relative z-10 max-w-7xl mx-auto p-4 pt-20">
         {/* Header with animations */}
         <div className={`text-center mb-12 transition-all duration-1000 delay-300 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
           <div className="inline-block mb-4">
