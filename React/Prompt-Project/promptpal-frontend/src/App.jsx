@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import PromptForm from './components/PromptForm';
 import PromptHistory from './components/PromptHistory';
 
+
 function App() {
   const [refreshKey, setRefreshKey] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
