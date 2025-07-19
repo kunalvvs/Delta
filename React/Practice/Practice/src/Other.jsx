@@ -4,27 +4,24 @@ import './App.css'
 export default function Other()
 {
     
-    let [text,setText] = useState();
-    let [add,setAdd] = useState();
+    let [text,setText] = useState("Write something here");
+    let [show,setShow] = useState();
 
-
-    let handleText=(evt)=>{
+    let handleText = (evt) =>{
         setText(evt.target.value);
-
     }
 
-    let handleBut = ()=>{
-        setAdd(text);
+    let handleEvent = ()=>{
+        setShow(text);
     }
-
 
     return <>
     
-    <input type="text" value={text}  placeholder="write something" onChange={handleText}></input>
-    <p > Live Texting :-  {text} </p>
-
-    <button onClick={handleBut}>Add</button>
-    <p>  👉 {add}</p>
+    <input type="text" placeholder="write something" value={text} onChange={handleText}/>
+    <p>Live Show: {text}</p>
+    <p>{show}</p>
+    <button onClick={handleEvent}>Show Text</button>
+   
 
     </>
 }
