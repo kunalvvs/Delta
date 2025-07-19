@@ -4,7 +4,7 @@ import './App.css'
 export default function Div()
 {
     
-    const [isOneVisible, setIsOneVisible] = useState(true);
+    const [isOneVisible, setIsOneVisible] = useState(false);
 
     const handleToggle = () => {  
         setIsOneVisible(!isOneVisible);
