@@ -17,7 +17,7 @@ btn.addEventListener("click",function(event)
     inp.value =" ";
 })
 
-//for deletion 
+// for deletion 
 ol.addEventListener("click",function(event){
     let delbtn = event.target.classList.contains("delete");
     if(delbtn){
