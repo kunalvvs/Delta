@@ -1,0 +1,27 @@
+.downloadbox{
+    width: 200px;
+    height: 10px;
+   position: absolute;
+     top: 50%;
+     left: 50%;
+    background-color: gray;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+
+
+
+.progress{
+    width: 0%;
+    height: 10px;
+    background-color: rgb(82, 228, 82);
+     border: 1px solid rgb(7, 246, 47);
+    border-radius: 10px;
+    transition: .5s;
+}
+
+p{
+    position: absolute;
+     top: 50%;
+     left: 50%;
+}
