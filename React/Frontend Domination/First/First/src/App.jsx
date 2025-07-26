@@ -8,7 +8,8 @@ import Fourth from './Fourth'
 import Fifth from './Fifth'
 
 function App() {
-//this is made for practice in this we contains multiple logics of DOM manipulation
+//this is made for practice in this 
+// we contains multiple logics of DOM manipulation
 
   return (
     <>
