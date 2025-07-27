@@ -3,6 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopHub - Your Ultimate Shopping Destination</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Particle Background -->
+    <div class="particle-bg"></div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShopHub - Premium E-Commerce Store</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -45,6 +62,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link holographic fw-bold" href="showcase.html">
+                            <i class="fas fa-magic me-1"></i>Showcase
+                        </a>
+                    </li>
                 </ul>
                 
                 <div class="d-flex align-items-center">
@@ -69,65 +91,71 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section bg-primary text-white py-5">
+    <section class="hero-section animated-bg text-white py-5">
+        <div class="hero-floating-elements">
+            <i class="floating-icon fas fa-shopping-bag"></i>
+            <i class="floating-icon fas fa-star"></i>
+            <i class="floating-icon fas fa-heart"></i>
+            <i class="floating-icon fas fa-gift"></i>
+        </div>
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold mb-4">Discover Amazing Products</h1>
+                <div class="col-lg-6 animate-on-scroll">
+                    <h1 class="display-4 fw-bold mb-4 typewriter-text">Discover Amazing Products</h1>
                     <p class="lead mb-4">Shop the latest trends in electronics, fashion, home goods, and more with unbeatable prices and fast shipping.</p>
-                    <a href="products.html" class="btn btn-light btn-lg me-3">Shop Now</a>
-                    <a href="#featured" class="btn btn-outline-light btn-lg">View Deals</a>
+                    <a href="products.html" class="btn btn-light btn-lg me-3 ripple-btn magnetic-btn">Shop Now</a>
+                    <a href="#featured" class="btn btn-outline-light btn-lg ripple-btn">View Deals</a>
                 </div>
-                <div class="col-lg-6">
-                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop" alt="Shopping" class="img-fluid rounded shadow">
+                <div class="col-lg-6 animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop" alt="Shopping" class="img-fluid rounded shadow hover-lift interactive-card">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Categories Section -->
-    <section class="py-5">
+    <section class="py-5 animate-on-scroll">
         <div class="container">
-            <h2 class="text-center mb-5">Shop by Category</h2>
+            <h2 class="text-center mb-5 gradient-text">Shop by Category</h2>
             <div class="row g-4">
-                <div class="col-md-3 col-sm-6">
-                    <div class="category-card text-center p-4 border rounded hover-shadow">
+                <div class="col-md-3 col-sm-6 stagger-animation">
+                    <div class="category-card text-center p-4 border rounded hover-shadow interactive-card">
                         <div class="category-icon mb-3">
                             <i class="fas fa-laptop fa-3x text-primary"></i>
                         </div>
                         <h5>Electronics</h5>
                         <p class="text-muted">Latest gadgets and tech</p>
-                        <a href="products.html?category=electronics" class="btn btn-outline-primary">Shop Now</a>
+                        <a href="products.html?category=electronics" class="btn btn-outline-primary ripple-btn">Shop Now</a>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="category-card text-center p-4 border rounded hover-shadow">
+                <div class="col-md-3 col-sm-6 stagger-animation">
+                    <div class="category-card text-center p-4 border rounded hover-shadow interactive-card">
                         <div class="category-icon mb-3">
                             <i class="fas fa-tshirt fa-3x text-success"></i>
                         </div>
                         <h5>Fashion</h5>
                         <p class="text-muted">Trending styles for everyone</p>
-                        <a href="products.html?category=fashion" class="btn btn-outline-success">Shop Now</a>
+                        <a href="products.html?category=fashion" class="btn btn-outline-success ripple-btn">Shop Now</a>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="category-card text-center p-4 border rounded hover-shadow">
+                <div class="col-md-3 col-sm-6 stagger-animation">
+                    <div class="category-card text-center p-4 border rounded hover-shadow interactive-card">
                         <div class="category-icon mb-3">
                             <i class="fas fa-home fa-3x text-warning"></i>
                         </div>
                         <h5>Home & Garden</h5>
                         <p class="text-muted">Make your space beautiful</p>
-                        <a href="products.html?category=home" class="btn btn-outline-warning">Shop Now</a>
+                        <a href="products.html?category=home" class="btn btn-outline-warning ripple-btn">Shop Now</a>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="category-card text-center p-4 border rounded hover-shadow">
+                <div class="col-md-3 col-sm-6 stagger-animation">
+                    <div class="category-card text-center p-4 border rounded hover-shadow interactive-card">
                         <div class="category-icon mb-3">
                             <i class="fas fa-running fa-3x text-danger"></i>
                         </div>
                         <h5>Sports</h5>
                         <p class="text-muted">Gear up for fitness</p>
-                        <a href="products.html?category=sports" class="btn btn-outline-danger">Shop Now</a>
+                        <a href="products.html?category=sports" class="btn btn-outline-danger ripple-btn">Shop Now</a>
                     </div>
                 </div>
             </div>
@@ -223,5 +251,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/animations.js"></script>
 </body>
 </html>
