@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - ShopHub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="index.html">
+                <i class="fas fa-shopping-bag me-2"></i>ShopHub
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-label="Categories dropdown">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="products.html?category=electronics">Electronics</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=fashion">Fashion</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=home">Home & Garden</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=sports">Sports</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <div class="search-box me-3">
+                        <input type="text" class="form-control form-control-sm" placeholder="Search products..." id="searchInput">
+                    </div>
+                    <a href="login.html" class="btn btn-outline-primary btn-sm me-2">
+                        <i class="fas fa-user me-1"></i>Login
+                    </a>
+                    <a href="cart.html" class="btn btn-primary btn-sm position-relative">
+                        <i class="fas fa-shopping-cart me-1"></i>Cart
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cartCount">
+                            3
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="bg-light py-3">
+        <div class="container">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Shopping Cart</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Shopping Cart Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="mb-4">Shopping Cart</h2>
+            
+            <div class="row">
+                <!-- Cart Items -->
+                <div class="col-lg-8">
+                    <div class="cart-items">
+                        <!-- Cart Item 1 -->
+                        <div class="cart-item border rounded p-4 mb-3">
+                            <div class="row align-items-center">
+                                <div class="col-md-2">
+                                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=100&h=100&fit=crop" 
+                                         alt="Wireless Headphones" class="img-fluid rounded">
+                                </div>
+                                <div class="col-md-4">
+                                    <h6 class="mb-1">Premium Wireless Headphones</h6>
+                                    <p class="text-muted mb-1">Color: Black, Size: M</p>
+                                    <p class="text-muted mb-0">SKU: WH001</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="quantity-controls">
+                                        <div class="input-group input-group-sm">
+                                            <button class="btn btn-outline-secondary quantity-btn" type="button" data-action="decrease">-</button>
+                                            <input type="number" class="form-control text-center quantity-input" value="1" min="1" readonly>
+                                            <button class="btn btn-outline-secondary quantity-btn" type="button" data-action="increase">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 text-center">
+                                    <span class="fw-bold text-primary">$89.99</span>
+                                </div>
+                                <div class="col-md-2 text-center">
+                                    <button class="btn btn-outline-danger btn-sm remove-item" title="Remove item">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cart Item 2 -->
+                        <div class="cart-item border rounded p-4 mb-3">
+                            <div class="row align-items-center">
+                                <div class="col-md-2">
+                                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=100&h=100&fit=crop" 
+                                         alt="Smart Watch" class="img-fluid rounded">
+                                </div>
+                                <div class="col-md-4">
+                                    <h6 class="mb-1">Smart Fitness Watch</h6>
+                                    <p class="text-muted mb-1">Color: Silver, Size: 42mm</p>
+                                    <p class="text-muted mb-0">SKU: SW002</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="quantity-controls">
+                                        <div class="input-group input-group-sm">
+                                            <button class="btn btn-outline-secondary quantity-btn" type="button" data-action="decrease">-</button>
+                                            <input type="number" class="form-control text-center quantity-input" value="2" min="1" readonly>
+                                            <button class="btn btn-outline-secondary quantity-btn" type="button" data-action="increase">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 text-center">
+                                    <span class="fw-bold text-primary">$199.99</span>
+                                </div>
+                                <div class="col-md-2 text-center">
+                                    <button class="btn btn-outline-danger btn-sm remove-item" title="Remove item">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cart Item 3 -->
+                        <div class="cart-item border rounded p-4 mb-3">
+                            <div class="row align-items-center">
+                                <div class="col-md-2">
+                                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=100&h=100&fit=crop" 
+                                         alt="Laptop Bag" class="img-fluid rounded">
+                                </div>
+                                <div class="col-md-4">
+                                    <h6 class="mb-1">Premium Laptop Bag</h6>
+                                    <p class="text-muted mb-1">Color: Brown, Size: 15"</p>
+                                    <p class="text-muted mb-0">SKU: LB003</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="quantity-controls">
+                                        <div class="input-group input-group-sm">
+                                            <button class="btn btn-outline-secondary quantity-btn" type="button" data-action="decrease">-</button>
+                                            <input type="number" class="form-control text-center quantity-input" value="1" min="1" readonly>
+                                            <button class="btn btn-outline-secondary quantity-btn" type="button" data-action="increase">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 text-center">
+                                    <span class="fw-bold text-primary">$79.99</span>
+                                </div>
+                                <div class="col-md-2 text-center">
+                                    <button class="btn btn-outline-danger btn-sm remove-item" title="Remove item">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cart Actions -->
+                        <div class="cart-actions d-flex justify-content-between align-items-center mt-4">
+                            <a href="products.html" class="btn btn-outline-primary">
+                                <i class="fas fa-arrow-left me-2"></i>Continue Shopping
+                            </a>
+                            <button class="btn btn-outline-secondary" id="clearCart">
+                                <i class="fas fa-trash me-2"></i>Clear Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="col-lg-4">
+                    <div class="order-summary">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Order Summary</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="summary-row d-flex justify-content-between mb-2">
+                                    <span>Subtotal (4 items):</span>
+                                    <span>$569.97</span>
+                                </div>
+                                <div class="summary-row d-flex justify-content-between mb-2">
+                                    <span>Shipping:</span>
+                                    <span class="text-success">Free</span>
+                                </div>
+                                <div class="summary-row d-flex justify-content-between mb-2">
+                                    <span>Tax:</span>
+                                    <span>$45.60</span>
+                                </div>
+                                <div class="summary-row d-flex justify-content-between mb-2">
+                                    <span>Discount:</span>
+                                    <span class="text-success">-$25.00</span>
+                                </div>
+                                <hr>
+                                <div class="total-row d-flex justify-content-between fw-bold h5">
+                                    <span>Total:</span>
+                                    <span class="text-primary">$590.57</span>
+                                </div>
+                                
+                                <!-- Promo Code -->
+                                <div class="promo-code mt-3">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Enter promo code" id="promoCode">
+                                        <button class="btn btn-outline-secondary" type="button" id="applyPromo">Apply</button>
+                                    </div>
+                                </div>
+
+                                <!-- Checkout Button -->
+                                <a href="checkout.html" class="btn btn-primary btn-lg w-100 mt-3">
+                                    <i class="fas fa-lock me-2"></i>Proceed to Checkout
+                                </a>
+
+                                <!-- Payment Methods -->
+                                <div class="payment-methods mt-3 text-center">
+                                    <p class="text-muted mb-2">We accept:</p>
+                                    <div class="payment-icons">
+                                        <i class="fab fa-cc-visa text-primary me-2" title="Visa"></i>
+                                        <i class="fab fa-cc-mastercard text-warning me-2" title="Mastercard"></i>
+                                        <i class="fab fa-cc-amex text-info me-2" title="American Express"></i>
+                                        <i class="fab fa-paypal text-primary me-2" title="PayPal"></i>
+                                        <i class="fab fa-cc-apple-pay text-dark" title="Apple Pay"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Shipping Calculator -->
+                        <div class="card mt-4">
+                            <div class="card-header">
+                                <h6 class="mb-0">Shipping Calculator</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label for="country" class="form-label">Country</label>
+                                    <select class="form-select" id="country">
+                                        <option value="us">United States</option>
+                                        <option value="ca">Canada</option>
+                                        <option value="uk">United Kingdom</option>
+                                        <option value="de">Germany</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="zipCode" class="form-label">ZIP Code</label>
+                                    <input type="text" class="form-control" id="zipCode" placeholder="Enter ZIP code">
+                                </div>
+                                <button class="btn btn-outline-primary btn-sm" id="calculateShipping">
+                                    Calculate Shipping
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recently Viewed -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h4 class="mb-4">Recently Viewed</h4>
+                    <div class="row g-4" id="recentlyViewed">
+                        <!-- Recently viewed products will be loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Empty Cart Message (Hidden by default) -->
+    <div class="empty-cart-message d-none" id="emptyCartMessage">
+        <div class="container">
+            <div class="text-center py-5">
+                <i class="fas fa-shopping-cart fa-5x text-muted mb-4"></i>
+                <h3 class="mb-3">Your cart is empty</h3>
+                <p class="text-muted mb-4">Looks like you haven't added anything to your cart yet.</p>
+                <a href="products.html" class="btn btn-primary btn-lg">
+                    <i class="fas fa-shopping-bag me-2"></i>Start Shopping
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-shopping-bag me-2"></i>ShopHub
+                    </h5>
+                    <p>Your trusted online shopping destination with quality products and exceptional service.</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white-50">Home</a></li>
+                        <li><a href="products.html" class="text-white-50">Products</a></li>
+                        <li><a href="about.html" class="text-white-50">About Us</a></li>
+                        <li><a href="contact.html" class="text-white-50">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="fw-bold mb-3">Customer Service</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50">Help Center</a></li>
+                        <li><a href="#" class="text-white-50">Returns</a></li>
+                        <li><a href="#" class="text-white-50">Shipping Info</a></li>
+                        <li><a href="#" class="text-white-50">Track Order</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="fw-bold mb-3">Contact Info</h6>
+                    <p class="text-white-50">
+                        <i class="fas fa-map-marker-alt me-2"></i>
+                        123 Shopping Street, City, State 12345
+                    </p>
+                    <p class="text-white-50">
+                        <i class="fas fa-phone me-2"></i>
+                        +1 (555) 123-4567
+                    </p>
+                    <p class="text-white-50">
+                        <i class="fas fa-envelope me-2"></i>
+                        support@shophub.com
+                    </p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 ShopHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/cart.js"></script>
+</body>
+</html>

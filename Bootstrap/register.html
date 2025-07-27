@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - ShopHub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body class="auth-page">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="index.html">
+                <i class="fas fa-shopping-bag me-2"></i>ShopHub
+            </a>
+            
+            <div class="navbar-nav ms-auto">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-arrow-left me-2"></i>Back to Store
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Register Section -->
+    <section class="auth-section py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="auth-card">
+                        <div class="card shadow-lg border-0">
+                            <div class="card-body p-5">
+                                <!-- Header -->
+                                <div class="text-center mb-4">
+                                    <h2 class="card-title fw-bold mb-2">Create Your Account</h2>
+                                    <p class="text-muted">Join thousands of happy customers and start shopping today!</p>
+                                </div>
+
+                                <!-- Social Registration -->
+                                <div class="social-login mb-4">
+                                    <button class="btn btn-outline-danger w-100 mb-3" type="button">
+                                        <i class="fab fa-google me-2"></i>Sign up with Google
+                                    </button>
+                                    <button class="btn btn-outline-primary w-100 mb-3" type="button">
+                                        <i class="fab fa-facebook-f me-2"></i>Sign up with Facebook
+                                    </button>
+                                </div>
+
+                                <!-- Divider -->
+                                <div class="divider text-center mb-4">
+                                    <span class="divider-text">or create account with email</span>
+                                </div>
+
+                                <!-- Registration Form -->
+                                <form id="registerForm" class="needs-validation" novalidate>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label for="firstName" class="form-label">First Name *</label>
+                                            <input type="text" class="form-control form-control-lg" id="firstName" required>
+                                            <div class="invalid-feedback">
+                                                Please provide your first name.
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="lastName" class="form-label">Last Name *</label>
+                                            <input type="text" class="form-control form-control-lg" id="lastName" required>
+                                            <div class="invalid-feedback">
+                                                Please provide your last name.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="registerEmail" class="form-label">Email Address *</label>
+                                        <input type="email" class="form-control form-control-lg" id="registerEmail" required>
+                                        <div class="invalid-feedback">
+                                            Please provide a valid email address.
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="phoneNumber" class="form-label">Phone Number</label>
+                                        <input type="tel" class="form-control form-control-lg" id="phoneNumber" placeholder="+1 (555) 123-4567">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="registerPassword" class="form-label">Password *</label>
+                                        <div class="position-relative">
+                                            <input type="password" class="form-control form-control-lg" id="registerPassword" required minlength="8">
+                                            <button type="button" class="btn btn-link position-absolute end-0 top-50 translate-middle-y" id="toggleRegisterPassword" title="Toggle password visibility">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Password must be at least 8 characters long.
+                                        </div>
+                                        <div class="form-text">
+                                            Password must contain at least 8 characters with uppercase, lowercase, number, and special character.
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="confirmPassword" class="form-label">Confirm Password *</label>
+                                        <div class="position-relative">
+                                            <input type="password" class="form-control form-control-lg" id="confirmPassword" required>
+                                            <button type="button" class="btn btn-link position-absolute end-0 top-50 translate-middle-y" id="toggleConfirmPassword" title="Toggle password visibility">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Passwords do not match.
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="birthDate" class="form-label">Date of Birth</label>
+                                        <input type="date" class="form-control form-control-lg" id="birthDate">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="gender" class="form-label">Gender</label>
+                                        <select class="form-select form-select-lg" id="gender">
+                                            <option value="">Prefer not to say</option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Preferences -->
+                                    <div class="mb-4">
+                                        <label class="form-label">Shopping Preferences (Optional)</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="prefElectronics" value="electronics">
+                                            <label class="form-check-label" for="prefElectronics">
+                                                Electronics
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="prefFashion" value="fashion">
+                                            <label class="form-check-label" for="prefFashion">
+                                                Fashion
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="prefHome" value="home">
+                                            <label class="form-check-label" for="prefHome">
+                                                Home & Garden
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="prefSports" value="sports">
+                                            <label class="form-check-label" for="prefSports">
+                                                Sports & Fitness
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Terms and Conditions -->
+                                    <div class="mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                                            <label class="form-check-label" for="agreeTerms">
+                                                I agree to the <a href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#termsModal">Terms & Conditions</a> and <a href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a> *
+                                            </label>
+                                            <div class="invalid-feedback">
+                                                You must agree to the terms and conditions.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="subscribeNewsletter" checked>
+                                            <label class="form-check-label" for="subscribeNewsletter">
+                                                Subscribe to our newsletter for exclusive deals and updates
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="promotionalEmails">
+                                            <label class="form-check-label" for="promotionalEmails">
+                                                Receive promotional emails and special offers
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary btn-lg w-100 mb-3">
+                                        <i class="fas fa-user-plus me-2"></i>Create Account
+                                    </button>
+                                </form>
+
+                                <!-- Login Link -->
+                                <div class="text-center">
+                                    <p class="mb-0">Already have an account? 
+                                        <a href="login.html" class="text-decoration-none fw-bold">Sign In</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Welcome Benefits Sidebar -->
+                <div class="col-lg-4 col-md-6 d-none d-lg-block">
+                    <div class="benefits-sidebar ms-lg-4">
+                        <h4 class="mb-4">Welcome to ShopHub!</h4>
+                        <p class="text-muted mb-4">Join our community and enjoy these exclusive benefits:</p>
+                        
+                        <div class="benefit-item d-flex align-items-start mb-4">
+                            <div class="benefit-icon me-3">
+                                <i class="fas fa-gift fa-2x text-success"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold">Welcome Bonus</h6>
+                                <p class="text-muted mb-0">Get 10% off your first order when you sign up today!</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item d-flex align-items-start mb-4">
+                            <div class="benefit-icon me-3">
+                                <i class="fas fa-truck fa-2x text-primary"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold">Free Shipping</h6>
+                                <p class="text-muted mb-0">Enjoy free shipping on orders over $50 for registered members.</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item d-flex align-items-start mb-4">
+                            <div class="benefit-icon me-3">
+                                <i class="fas fa-star fa-2x text-warning"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold">Loyalty Rewards</h6>
+                                <p class="text-muted mb-0">Earn points on every purchase and redeem for exclusive discounts.</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item d-flex align-items-start mb-4">
+                            <div class="benefit-icon me-3">
+                                <i class="fas fa-bell fa-2x text-info"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold">Early Access</h6>
+                                <p class="text-muted mb-0">Be the first to know about sales, new products, and exclusive offers.</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item d-flex align-items-start mb-4">
+                            <div class="benefit-icon me-3">
+                                <i class="fas fa-headset fa-2x text-danger"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold">Priority Support</h6>
+                                <p class="text-muted mb-0">Get priority customer support and faster resolution times.</p>
+                            </div>
+                        </div>
+
+                        <!-- Trust Indicators -->
+                        <div class="trust-indicators mt-5">
+                            <h6 class="fw-bold mb-3">Trusted by 50,000+ Customers</h6>
+                            <div class="row text-center">
+                                <div class="col-4">
+                                    <i class="fas fa-shield-alt fa-2x text-success mb-2"></i>
+                                    <small class="d-block text-muted">Secure</small>
+                                </div>
+                                <div class="col-4">
+                                    <i class="fas fa-lock fa-2x text-primary mb-2"></i>
+                                    <small class="d-block text-muted">Protected</small>
+                                </div>
+                                <div class="col-4">
+                                    <i class="fas fa-certificate fa-2x text-warning mb-2"></i>
+                                    <small class="d-block text-muted">Verified</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms & Conditions Modal -->
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="termsModalLabel">Terms & Conditions</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>1. Acceptance of Terms</h6>
+                    <p>By creating an account with ShopHub, you agree to be bound by these Terms and Conditions.</p>
+                    
+                    <h6>2. Account Registration</h6>
+                    <p>You must provide accurate and complete information when creating your account. You are responsible for maintaining the confidentiality of your account credentials.</p>
+                    
+                    <h6>3. Use of Service</h6>
+                    <p>You agree to use our service only for lawful purposes and in accordance with these terms.</p>
+                    
+                    <h6>4. Privacy</h6>
+                    <p>Your privacy is important to us. Please review our Privacy Policy to understand how we collect and use your information.</p>
+                    
+                    <h6>5. Modifications</h6>
+                    <p>We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="privacyModalLabel">Privacy Policy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Information We Collect</h6>
+                    <p>We collect information you provide directly to us, such as when you create an account, make a purchase, or contact us.</p>
+                    
+                    <h6>How We Use Your Information</h6>
+                    <p>We use the information we collect to provide, maintain, and improve our services, process transactions, and communicate with you.</p>
+                    
+                    <h6>Information Sharing</h6>
+                    <p>We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as described in this policy.</p>
+                    
+                    <h6>Data Security</h6>
+                    <p>We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
+                    
+                    <h6>Contact Us</h6>
+                    <p>If you have any questions about this Privacy Policy, please contact us at privacy@shophub.com.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Security Features -->
+    <section class="security-section py-4 bg-light">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="security-item">
+                        <i class="fas fa-shield-alt fa-2x text-success mb-2"></i>
+                        <h6>SSL Encrypted</h6>
+                        <p class="text-muted mb-0">Your personal data is protected with 256-bit SSL encryption</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="security-item">
+                        <i class="fas fa-user-shield fa-2x text-primary mb-2"></i>
+                        <h6>Privacy Protected</h6>
+                        <p class="text-muted mb-0">We never share your information with third parties</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="security-item">
+                        <i class="fas fa-check-circle fa-2x text-success mb-2"></i>
+                        <h6>GDPR Compliant</h6>
+                        <p class="text-muted mb-0">Full compliance with data protection regulations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2025 ShopHub. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="footer-links">
+                        <a href="#" class="text-white-50 me-3">Privacy Policy</a>
+                        <a href="#" class="text-white-50 me-3">Terms of Service</a>
+                        <a href="contact.html" class="text-white-50">Support</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const registerForm = document.getElementById('registerForm');
+            const toggleRegisterPassword = document.getElementById('toggleRegisterPassword');
+            const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
+            const registerPassword = document.getElementById('registerPassword');
+            const confirmPassword = document.getElementById('confirmPassword');
+
+            // Password visibility toggle
+            toggleRegisterPassword.addEventListener('click', function() {
+                const type = registerPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+                registerPassword.setAttribute('type', type);
+                this.querySelector('i').classList.toggle('fa-eye');
+                this.querySelector('i').classList.toggle('fa-eye-slash');
+            });
+
+            toggleConfirmPassword.addEventListener('click', function() {
+                const type = confirmPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+                confirmPassword.setAttribute('type', type);
+                this.querySelector('i').classList.toggle('fa-eye');
+                this.querySelector('i').classList.toggle('fa-eye-slash');
+            });
+
+            // Password strength validation
+            registerPassword.addEventListener('input', function() {
+                const password = this.value;
+                const isValid = password.length >= 8 && 
+                               /[A-Z]/.test(password) && 
+                               /[a-z]/.test(password) && 
+                               /\d/.test(password) && 
+                               /[^A-Za-z0-9]/.test(password);
+                
+                if (password.length > 0) {
+                    this.classList.toggle('is-valid', isValid);
+                    this.classList.toggle('is-invalid', !isValid);
+                }
+            });
+
+            // Confirm password validation
+            confirmPassword.addEventListener('input', function() {
+                const isValid = this.value === registerPassword.value && this.value.length > 0;
+                this.classList.toggle('is-valid', isValid);
+                this.classList.toggle('is-invalid', !isValid && this.value.length > 0);
+            });
+
+            // Form submission
+            registerForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+
+                // Custom validation for password match
+                const passwordsMatch = registerPassword.value === confirmPassword.value;
+                if (!passwordsMatch) {
+                    confirmPassword.setCustomValidity('Passwords do not match');
+                } else {
+                    confirmPassword.setCustomValidity('');
+                }
+
+                if (registerForm.checkValidity() && passwordsMatch) {
+                    // Simulate registration process
+                    const submitBtn = registerForm.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.innerHTML;
+                    
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Creating Account...';
+                    submitBtn.disabled = true;
+                    
+                    setTimeout(() => {
+                        ShopHub.showToast('Account created successfully! Welcome to ShopHub!', 'success');
+                        setTimeout(() => {
+                            window.location.href = 'login.html';
+                        }, 2000);
+                    }, 2000);
+                } else {
+                    registerForm.classList.add('was-validated');
+                }
+            });
+
+            // Real-time email validation
+            const emailInput = document.getElementById('registerEmail');
+            emailInput.addEventListener('blur', function() {
+                if (this.value && !ShopHub.validateEmail(this.value)) {
+                    this.setCustomValidity('Please enter a valid email address');
+                    this.classList.add('is-invalid');
+                } else {
+                    this.setCustomValidity('');
+                    this.classList.remove('is-invalid');
+                    if (this.value) this.classList.add('is-valid');
+                }
+            });
+
+            // Phone number formatting
+            const phoneInput = document.getElementById('phoneNumber');
+            phoneInput.addEventListener('input', function() {
+                let value = this.value.replace(/\D/g, '');
+                if (value.length >= 6) {
+                    value = value.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
+                } else if (value.length >= 3) {
+                    value = value.replace(/(\d{3})(\d{0,3})/, '($1) $2');
+                }
+                this.value = value;
+            });
+        });
+    </script>
+</body>
+</html>

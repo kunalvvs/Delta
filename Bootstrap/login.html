@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - ShopHub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body class="auth-page">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="index.html">
+                <i class="fas fa-shopping-bag me-2"></i>ShopHub
+            </a>
+            
+            <div class="navbar-nav ms-auto">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-arrow-left me-2"></i>Back to Store
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section class="auth-section py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5 col-md-7">
+                    <div class="auth-card">
+                        <div class="card shadow-lg border-0">
+                            <div class="card-body p-5">
+                                <!-- Header -->
+                                <div class="text-center mb-4">
+                                    <h2 class="card-title fw-bold mb-2">Welcome Back!</h2>
+                                    <p class="text-muted">Sign in to your account to continue shopping</p>
+                                </div>
+
+                                <!-- Social Login -->
+                                <div class="social-login mb-4">
+                                    <button class="btn btn-outline-danger w-100 mb-3" type="button">
+                                        <i class="fab fa-google me-2"></i>Continue with Google
+                                    </button>
+                                    <button class="btn btn-outline-primary w-100 mb-3" type="button">
+                                        <i class="fab fa-facebook-f me-2"></i>Continue with Facebook
+                                    </button>
+                                </div>
+
+                                <!-- Divider -->
+                                <div class="divider text-center mb-4">
+                                    <span class="divider-text">or sign in with email</span>
+                                </div>
+
+                                <!-- Login Form -->
+                                <form id="loginForm">
+                                    <div class="mb-3">
+                                        <label for="loginEmail" class="form-label">Email Address</label>
+                                        <input type="email" class="form-control form-control-lg" id="loginEmail" placeholder="Enter your email" required>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="loginPassword" class="form-label">Password</label>
+                                        <div class="position-relative">
+                                            <input type="password" class="form-control form-control-lg" id="loginPassword" placeholder="Enter your password" required>
+                                            <button type="button" class="btn btn-link position-absolute end-0 top-50 translate-middle-y" id="togglePassword">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between align-items-center mb-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="rememberMe">
+                                            <label class="form-check-label" for="rememberMe">
+                                                Remember me
+                                            </label>
+                                        </div>
+                                        <a href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal">
+                                            Forgot Password?
+                                        </a>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary btn-lg w-100 mb-3">
+                                        <i class="fas fa-sign-in-alt me-2"></i>Sign In
+                                    </button>
+                                </form>
+
+                                <!-- Register Link -->
+                                <div class="text-center">
+                                    <p class="mb-0">Don't have an account? 
+                                        <a href="register.html" class="text-decoration-none fw-bold">Sign Up</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefits Sidebar -->
+                <div class="col-lg-4 col-md-5 d-none d-md-block">
+                    <div class="benefits-sidebar ms-lg-4">
+                        <h4 class="mb-4">Why Sign In?</h4>
+                        
+                        <div class="benefit-item d-flex align-items-start mb-4">
+                            <div class="benefit-icon me-3">
+                                <i class="fas fa-shipping-fast fa-2x text-primary"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold">Faster Checkout</h6>
+                                <p class="text-muted mb-0">Save your shipping and payment information for quick purchases.</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item d-flex align-items-start mb-4">
+                            <div class="benefit-icon me-3">
+                                <i class="fas fa-heart fa-2x text-danger"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold">Wishlist & Favorites</h6>
+                                <p class="text-muted mb-0">Save products you love and get notified when they go on sale.</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item d-flex align-items-start mb-4">
+                            <div class="benefit-icon me-3">
+                                <i class="fas fa-history fa-2x text-success"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold">Order History</h6>
+                                <p class="text-muted mb-0">Track your orders and easily reorder your favorite items.</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item d-flex align-items-start mb-4">
+                            <div class="benefit-icon me-3">
+                                <i class="fas fa-tags fa-2x text-warning"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold">Exclusive Deals</h6>
+                                <p class="text-muted mb-0">Get access to member-only discounts and early sales.</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item d-flex align-items-start">
+                            <div class="benefit-icon me-3">
+                                <i class="fas fa-star fa-2x text-info"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold">Rewards Program</h6>
+                                <p class="text-muted mb-0">Earn points on every purchase and redeem for discounts.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Forgot Password Modal -->
+    <div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="forgotPasswordModalLabel">Reset Password</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted">Enter your email address and we'll send you a link to reset your password.</p>
+                    <form id="forgotPasswordForm">
+                        <div class="mb-3">
+                            <label for="resetEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="resetEmail" placeholder="Enter your email" required>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Send Reset Link</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Security Features -->
+    <section class="security-section py-4 bg-light">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="security-item">
+                        <i class="fas fa-shield-alt fa-2x text-success mb-2"></i>
+                        <h6>Secure Login</h6>
+                        <p class="text-muted mb-0">Your data is protected with SSL encryption</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="security-item">
+                        <i class="fas fa-user-shield fa-2x text-primary mb-2"></i>
+                        <h6>Privacy Protected</h6>
+                        <p class="text-muted mb-0">We never share your personal information</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="security-item">
+                        <i class="fas fa-lock fa-2x text-warning mb-2"></i>
+                        <h6>Safe Payments</h6>
+                        <p class="text-muted mb-0">All transactions are securely processed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2025 ShopHub. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="footer-links">
+                        <a href="#" class="text-white-50 me-3">Privacy Policy</a>
+                        <a href="#" class="text-white-50 me-3">Terms of Service</a>
+                        <a href="contact.html" class="text-white-50">Support</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/auth.js"></script>
+</body>
+</html>
