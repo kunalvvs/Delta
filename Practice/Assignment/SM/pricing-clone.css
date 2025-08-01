@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.subtitle {
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+    opacity: 0.9;
+}
+
+.pricing-cards {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 320px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.recommended {
+    border: 3px solid #ff6b6b;
+    transform: scale(1.05);
+}
+
+.popular {
+    border: 3px solid #4ecdc4;
+}
+
+.badge {
+    background: #ff6b6b;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.popular-badge {
+    background: #4ecdc4;
+}
+
+.plan-header h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.price-section {
+    margin-bottom: 30px;
+}
+
+.original-price {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 1.2rem;
+}
+
+.discount {
+    background: #ff4757;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.current-price {
+    color: #333;
+    font-size: 2.2rem;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.current-price::before {
+    content: "₹";
+    font-size: 1.5rem;
+}
+
+.features {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.feature {
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    color: #555;
+    font-size: 0.95rem;
+    position: relative;
+    padding-left: 25px;
+}
+
+.feature::before {
+    content: "✓";
+    color: #27ae60;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.feature:last-child {
+    border-bottom: none;
+}
+
+.cta-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.recommended .cta-button {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+}
+
+.popular .cta-button {
+    background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+}
+
+@media (max-width: 768px) {
+    .pricing-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .recommended {
+        transform: none;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .card {
+        width: 100%;
+        max-width: 350px;
+    }
+}
