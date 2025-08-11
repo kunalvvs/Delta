@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>URL Shortener</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0f172a;--card:#111827;--muted:#94a3b8;--primary:#22c55e;--border:#1f2937;--input:#0b1220;}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;background:linear-gradient(180deg,#0b1220,#0f172a 30%,#0b1220);color:#e5e7eb;min-height:100vh;}
+    .container{max-width:780px;margin:0 auto;padding:32px}
+    header{display:flex;align-items:center;gap:12px;margin:20px 0 28px}
+    .logo{width:40px;height:40px;border-radius:10px;background:radial-gradient(circle at 30% 30%, #22c55e, #16a34a 40%, #065f46 75%);box-shadow:0 0 0 1px #064e3b inset,0 10px 30px #16a34a25}
+    h1{font-size:28px;margin:0}
+    .muted{color:var(--muted)}
+    .card{background:rgba(17,24,39,.6);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:14px;padding:22px}
+    form{display:grid;grid-template-columns:1fr auto;gap:12px}
+    input[type="url"],input[type="text"]{width:100%;padding:14px 16px;border-radius:10px;background:var(--input);border:1px solid var(--border);color:#e5e7eb;outline:none}
+    input:focus{border-color:#22c55e66;box-shadow:0 0 0 3px #22c55e22}
+    .row{display:flex;gap:12px;margin-top:10px}
+    button{padding:14px 18px;border:none;border-radius:10px;background:var(--primary);color:#052e16;font-weight:700;cursor:pointer}
+    button:hover{filter:brightness(1.05)}
+    .result{margin-top:18px;display:none}
+    .result.show{display:block}
+    .result .card{display:flex;align-items:center;gap:12px}
+    .code{font-weight:700;color:#bbf7d0}
+    .small{font-size:12px}
+    .stats{margin-top:12px;color:#9ca3af}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo"></div>
+      <div>
+        <h1>LinkMint</h1>
+        <div class="muted small">Shorten long URLs into neat, shareable links.</div>
+      </div>
+    </header>
+
+    <div class="card">
+      <form id="shorten-form">
+        <input id="longUrl" name="longUrl" type="url" placeholder="Paste a long URL, e.g. https://example.com/very/long/link" required />
+        <button type="submit">Shorten</button>
+        <div class="row">
+          <input id="custom" name="custom" type="text" placeholder="Optional custom code (a-z, A-Z, 0-9, _ , -)" pattern="[A-Za-z0-9_-]{3,30}" />
+        </div>
+      </form>
+      <div class="result" id="result">
+        <div class="card">
+          <span>Short URL:</span>
+          <a id="shortUrl" target="_blank" rel="noopener"></a>
+          <button id="copyBtn">Copy</button>
+        </div>
+        <div class="stats small" id="stats"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('shorten-form');
+    const result = document.getElementById('result');
+    const shortUrlEl = document.getElementById('shortUrl');
+    const copyBtn = document.getElementById('copyBtn');
+    const statsEl = document.getElementById('stats');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const fd = new FormData(form);
+      const payload = Object.fromEntries(fd.entries());
+      const res = await fetch('/api/shorten', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        alert(data.error || 'Failed to shorten');
+        return;
+      }
+      shortUrlEl.textContent = data.shortUrl;
+      shortUrlEl.href = data.shortUrl;
+      result.classList.add('show');
+      // fetch stats
+      const sRes = await fetch(`/api/stats/${data.code}`);
+      if (sRes.ok) {
+        const s = await sRes.json();
+        statsEl.textContent = `Created ${new Date(s.createdAt).toLocaleString()} · Clicks ${s.clicks}`;
+      }
+    });
+
+    copyBtn.addEventListener('click', async () => {
+      const text = shortUrlEl.href;
+      try {
+        await navigator.clipboard.writeText(text);
+        copyBtn.textContent = 'Copied!';
+        setTimeout(() => copyBtn.textContent = 'Copy', 1500);
+      } catch (e) {
+        alert('Copy failed');
+      }
+    });
+  </script>
+</body>
+</html>
