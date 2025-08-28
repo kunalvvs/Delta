@@ -11,4 +11,4 @@ let c = setInterval(function(){
         p.innerText = "Download Completed";
       }
       prog.style.width = count + "%";
-},100)
+},50)

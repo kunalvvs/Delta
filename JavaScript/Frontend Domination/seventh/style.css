@@ -3,7 +3,7 @@
     height: 10px;
    position: absolute;
      top: 50%;
-     left: 50%;
+     left: 45%;
     background-color: gray;
     border: 1px solid grey;
     border-radius: 10px;
@@ -23,5 +23,5 @@
 p{
     position: absolute;
      top: 50%;
-     left: 50%;
+     left: 45%;
 }

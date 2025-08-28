@@ -22,6 +22,7 @@ export default function Third()
                     onChange={(e) => setInp(e.target.value)} 
                 />
                 <button type="submit">Submit</button>
+                
             </form>
         </div>
     )
