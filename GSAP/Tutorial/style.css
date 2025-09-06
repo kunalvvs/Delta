@@ -1,7 +1,7 @@
 body {
     margin: 0;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     height: 100vh;
     background-color: #f0f0f0;
@@ -12,4 +12,11 @@ body {
     height: 100px;
     background-color: #3498db;
     border-radius: 10px;
+}
+
+h1{
+    font-family: Arial, sans-serif;
+    color: #333;
+    /* text-align: center; */
+    margin-top: 20px;
 }
